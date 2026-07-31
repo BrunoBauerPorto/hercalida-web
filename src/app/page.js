@@ -55,9 +55,9 @@
                       <a href="#sobre" className="hover:text-rose-500 transition-colors">Sobre nós</a>
                       <a href="#blog" className="hover:text-rose-500 transition-colors">Blog</a>
                     </nav>
-                    <button className="hidden md:block bg-rose-400 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-rose-500 transition-colors shadow-sm shadow-rose-200">
-                      Entrar na lista de espera
-                    </button>
+                    <a href="#newsletter" className="inline-block bg-rose-400 text-white px-8 py-3.5 rounded-full font-bold hover:bg-rose-500 transition-colors shadow-sm">
+    Quero ser avisada no lançamento
+  </a>
                   </div>
                 </header>
 
@@ -79,12 +79,9 @@
           </p>
                     
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                      <button className="w-full sm:w-auto bg-rose-400 text-white px-8 py-3.5 rounded-full font-bold hover:bg-rose-500 transition-colors shadow-lg shadow-rose-200 flex justify-center items-center gap-2">
-                        Quero conhecer <span className="text-xl">→</span>
-                      </button>
-                      <button className="w-full sm:w-auto bg-white border-2 border-rose-400 text-rose-500 px-8 py-3.5 rounded-full font-bold hover:bg-rose-50 transition-colors">
-                        Entrar na lista de espera
-                      </button>
+                      <a href="#recursos" className="inline-block bg-rose-400 text-white px-8 py-3.5 rounded-full font-bold hover:bg-rose-500 transition-colors shadow-sm">
+                        Quero Conhecer
+                      </a>
                     </div>
 
                     {/* Badges de Confiança */}
@@ -260,7 +257,7 @@
                           ))}
                         </ul>
                         <button className="w-full bg-rose-400 text-white font-bold py-3.5 rounded-full hover:bg-rose-500 transition-colors shadow-md">
-                          Quero o Premium
+                          Estamos chegando!
                         </button>
                       </div>
 
@@ -270,7 +267,11 @@
                           Em breve
                         </div>
                         <h3 className="text-xl font-bold text-rose-600 mb-2 mt-10">HerCalida Assistente</h3>
-                        <div className="text-lg font-bold text-slate-900 mb-6">Em breve</div>
+                        <div className="flex items-baseline justify-center gap-1 mb-6">
+                          <span className="text-sm font-bold text-slate-500">R$</span>
+                          <span className="text-4xl font-black text-slate-900">15,90</span>
+                          <span className="text-sm text-slate-500">/mês</span>
+                        </div>
                         <p className="text-slate-500 text-sm mb-8 h-10">
                           A próxima evolução do HerCalida<br/>com inteligência artificial.
                         </p>
