@@ -283,9 +283,7 @@ export default function HerCalidaLandingPage() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-rose-400 text-white font-bold py-3.5 rounded-full hover:bg-rose-500 transition-colors shadow-md text-sm md:text-base">
-                Estamos chegando!
-              </button>
+             
             </div>
 
             {/* Assistente */}
@@ -311,9 +309,7 @@ export default function HerCalidaLandingPage() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-white border-2 border-slate-200 text-rose-500 font-bold py-3.5 rounded-full hover:bg-slate-50 transition-colors text-sm md:text-base">
-                Entrar na lista
-              </button>
+              
             </div>
 
           </div>
