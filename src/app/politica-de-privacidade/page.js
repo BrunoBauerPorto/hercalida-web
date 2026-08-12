@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Política de Privacidade | HerCalida",
+  title: "Política de Privacidade",
   description:
     "Saiba como o HerCalida trata, protege e permite controlar dados pessoais e de saúde.",
 };
@@ -345,6 +345,15 @@ export default function PoliticaPrivacidade() {
                       e prestar suporte.
                     </p>
                   </Subsection>
+
+                  <Subsection id="dados-beta" title="4.8 Lista de interesse no beta">
+                    <p className={paragraphClass}>
+                      Quando uma pessoa preenche o formulário do site, o HerCalida registra o
+                      e-mail informado, a data do cadastro, a origem do formulário, a finalidade
+                      da comunicação e a versão da Política de Privacidade vigente. Não são
+                      solicitados dados de saúde nesse formulário.
+                    </p>
+                  </Subsection>
                 </Section>
 
                 <Section id="finalidades" number="5" title="Para que os dados são utilizados">
@@ -367,6 +376,10 @@ export default function PoliticaPrivacidade() {
                       APIs;
                     </li>
                     <li>reconhecer compras, assinaturas e direitos de acesso;</li>
+                    <li>
+                      administrar a lista de interesse, enviar convites para o beta fechado e
+                      comunicar novidades relevantes do produto;
+                    </li>
                     <li>cumprir obrigações legais e atender solicitações de suporte e de direitos.</li>
                   </BulletList>
                   <p className={paragraphClass}>
@@ -504,6 +517,12 @@ export default function PoliticaPrivacidade() {
                     e registros pessoais de saúde não são enviados ao Firestore para essa finalidade.
                   </p>
                   <p className={paragraphClass}>
+                    O e-mail fornecido voluntariamente no formulário de interesse do beta é
+                    armazenado em uma base Cloud Firestore do site para administrar convites e
+                    novidades do HerCalida. Essa lista não recebe os registros de saúde mantidos no
+                    aplicativo e não é utilizada para publicidade comportamental.
+                  </p>
+                  <p className={paragraphClass}>
                     O app poderá obter arquivos tipográficos da infraestrutura Google Fonts, que
                     poderá receber dados técnicos como IP e informações da requisição. O site oficial
                     é hospedado pela Vercel, que poderá tratar IP, agente do navegador e registros de
@@ -615,6 +634,14 @@ export default function PoliticaPrivacidade() {
                       apaga automaticamente os registros locais.
                     </div>
                   </Subsection>
+
+                  <Subsection id="retencao-beta" title="13.5 Lista de interesse no beta">
+                    <p className={paragraphClass}>
+                      O e-mail da lista de interesse será mantido enquanto for necessário para
+                      administrar o beta e enviar as novidades solicitadas, ou até que a pessoa peça
+                      sua exclusão pelo canal de privacidade. A retirada da lista é gratuita.
+                    </p>
+                  </Subsection>
                 </Section>
 
                 <Section id="direitos" number="14" title="Controle da usuária e direitos previstos na LGPD">
@@ -637,8 +664,9 @@ export default function PoliticaPrivacidade() {
                   </BulletList>
                   <p className={paragraphClass}>
                     No app, é possível visualizar e editar registros, exportar dados, revogar o
-                    consentimento da Calie e apagar todos os dados locais. Para solicitações sobre
-                    dados técnicos ou fornecedores, escreva para{" "}
+                    consentimento da Calie e apagar todos os dados locais. Para remover o e-mail da
+                    lista de interesse ou fazer solicitações sobre dados técnicos e fornecedores,
+                    escreva para{" "}
                     <a
                       href="mailto:hersyncapp@gmail.com"
                       className="font-semibold text-fuchsia-700 hover:underline"
