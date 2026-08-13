@@ -265,7 +265,7 @@ Decisão no dia 10:
 
 ## Checklist de lançamento
 
-- [ ] Publicar a versão do site na Vercel.
+- [ ] Publicar a versão do site na Hostinger.
 - [ ] Confirmar que `https://hercalida.com/guias` abre no domínio principal.
 - [ ] Abrir cada guia no celular e no computador.
 - [ ] Testar o botão do WhatsApp e conferir a URL UTM na mensagem.
@@ -275,4 +275,3 @@ Decisão no dia 10:
 - [ ] Atualizar o link da bio para o guia de ciclo.
 - [ ] Programar as publicações dos primeiros quatro dias.
 - [ ] Separar os primeiros 20 contatos e personalizar as mensagens.
-

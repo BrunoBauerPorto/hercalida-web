@@ -802,7 +802,7 @@ export default function HerCalidaLandingPage() {
           </div>
           <div className="flex flex-col items-center justify-between gap-3 pt-7 text-xs text-slate-500 sm:flex-row">
             <p>© 2026 HerCalida. Todos os direitos reservados.</p>
-            <a href="mailto:hersyncapp@gmail.com" className="font-medium hover:text-rose-500">hersyncapp@gmail.com</a>
+            <a href="mailto:suporte@hercalida.com" className="font-medium hover:text-rose-500">suporte@hercalida.com</a>
           </div>
         </div>
       </footer>

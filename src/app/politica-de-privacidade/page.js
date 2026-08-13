@@ -181,10 +181,10 @@ export default function PoliticaPrivacidade() {
                     <dt className="font-bold text-slate-800">Privacidade e suporte</dt>
                     <dd className="m-0">
                       <a
-                        href="mailto:hersyncapp@gmail.com"
+                        href="mailto:suporte@hercalida.com"
                         className="font-semibold text-fuchsia-700 hover:underline"
                       >
-                        hersyncapp@gmail.com
+                        suporte@hercalida.com
                       </a>
                     </dd>
                   </dl>
@@ -555,8 +555,9 @@ export default function PoliticaPrivacidade() {
                   <p className={paragraphClass}>
                     O app poderá obter arquivos tipográficos da infraestrutura Google Fonts, que
                     poderá receber dados técnicos como IP e informações da requisição. O site oficial
-                    é hospedado pela Vercel, que poderá tratar IP, agente do navegador e registros de
-                    acesso para entregar e proteger a página.
+                    está disponível em <ExternalLink href="https://hercalida.com">hercalida.com</ExternalLink>{" "}
+                    e é hospedado pela Hostinger, que poderá tratar IP, agente do navegador e
+                    registros de acesso para entregar e proteger a página.
                   </p>
                   <p className={paragraphClass}>
                     O site oferece uma medição opcional pelo Google Analytics 4. Ela só é carregada
@@ -578,8 +579,8 @@ export default function PoliticaPrivacidade() {
                       Política de Privacidade da Google
                     </ExternalLink>{" "}
                     e a{" "}
-                    <ExternalLink href="https://vercel.com/legal/privacy-policy">
-                      Política de Privacidade da Vercel
+                    <ExternalLink href="https://www.hostinger.com/br/legal/politica-de-privacidade">
+                      Política de Privacidade da Hostinger
                     </ExternalLink>
                     .
                   </p>
@@ -599,7 +600,7 @@ export default function PoliticaPrivacidade() {
                       Play;
                     </li>
                     <li>
-                      com a <strong>Vercel</strong>, para hospedagem e segurança do site;
+                      com a <strong>Hostinger</strong>, para hospedagem, entrega e segurança do site;
                     </li>
                     <li>
                       com fornecedores estritamente necessários, identificados nesta Política antes
@@ -616,7 +617,7 @@ export default function PoliticaPrivacidade() {
 
                 <Section id="transferencia" number="12" title="Transferência internacional">
                   <p className={paragraphClass}>
-                    Google, Firebase e Vercel mantêm infraestrutura e prestadores em diferentes
+                    Google, Firebase e Hostinger mantêm infraestrutura e prestadores em diferentes
                     países. Por isso, dados técnicos e, quando a Calie for utilizada, o conteúdo
                     enviado à IA poderão ser processados fora do Brasil. As transferências deverão
                     observar os mecanismos permitidos pela LGPD e salvaguardas contratuais, técnicas
@@ -734,10 +735,10 @@ export default function PoliticaPrivacidade() {
                     lista de interesse ou fazer solicitações sobre dados técnicos e fornecedores,
                     escreva para{" "}
                     <a
-                      href="mailto:hersyncapp@gmail.com"
+                      href="mailto:suporte@hercalida.com"
                       className="font-semibold text-fuchsia-700 hover:underline"
                     >
-                      hersyncapp@gmail.com
+                      suporte@hercalida.com
                     </a>
                     . Poderemos solicitar informações mínimas para verificar a legitimidade do
                     pedido, sem exigir dados desproporcionais.
@@ -811,10 +812,10 @@ export default function PoliticaPrivacidade() {
                   <p className={paragraphClass}>
                     Para dúvidas sobre privacidade, solicitações ou reclamações, escreva para{" "}
                     <a
-                      href="mailto:hersyncapp@gmail.com"
+                      href="mailto:suporte@hercalida.com"
                       className="font-semibold text-fuchsia-700 hover:underline"
                     >
-                      hersyncapp@gmail.com
+                      suporte@hercalida.com
                     </a>
                     .
                   </p>
