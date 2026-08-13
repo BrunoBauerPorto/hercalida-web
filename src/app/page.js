@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+
+import celularCalendario from "../../public/Celular1.png";
+import celularVisaoGeral from "../../public/Celular2.png";
 import {
   Activity,
   ArrowRight,
@@ -450,10 +453,22 @@ export default function HerCalidaLandingPage() {
             <div className="relative mx-auto h-[500px] w-full max-w-[650px] sm:h-[610px] lg:h-[650px]">
               <div className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-rose-200/60 bg-gradient-to-br from-rose-100 via-white to-fuchsia-100 shadow-[0_40px_100px_rgba(244,63,94,0.15)]" />
               <div className="absolute left-[7%] top-[17%] z-10 w-[47%] -rotate-6 transition duration-500 hover:-translate-y-2 hover:-rotate-3 sm:left-[10%] sm:w-[43%]">
-                <Image src="/celular-calendario.png" alt="Tela de calendário do HerCalida" width={539} height={1092} priority className="h-auto w-full drop-shadow-2xl" />
+                <Image
+                  src={celularCalendario}
+                  alt="Tela de calendário do HerCalida"
+                  sizes="(min-width: 640px) 280px, 47vw"
+                  priority
+                  className="h-auto w-full drop-shadow-2xl"
+                />
               </div>
               <div className="absolute right-[4%] top-[4%] z-20 w-[50%] rotate-6 transition duration-500 hover:-translate-y-2 hover:rotate-3 sm:right-[8%] sm:w-[46%]">
-                <Image src="/celular-visao-geral.png" alt="Tela de insights do HerCalida" width={539} height={1092} priority className="h-auto w-full drop-shadow-2xl" />
+                <Image
+                  src={celularVisaoGeral}
+                  alt="Tela de insights do HerCalida"
+                  sizes="(min-width: 640px) 300px, 50vw"
+                  priority
+                  className="h-auto w-full drop-shadow-2xl"
+                />
               </div>
               <div className="absolute bottom-[7%] left-[1%] z-30 rounded-2xl border border-white/80 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-[4%]">
                 <p className="mb-1 text-[10px] font-black uppercase tracking-[0.14em] text-rose-500">Aprendizado local</p>
