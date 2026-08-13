@@ -99,11 +99,6 @@ function GuideSection({ section }) {
       {section.intro ? (
         <p className="mt-4 text-base leading-8 text-slate-700">{section.intro}</p>
       ) : null}
-      {section.paragraphs?.map((paragraph) => (
-        <p key={paragraph} className="mt-4 text-base leading-8 text-slate-700">
-          {paragraph}
-        </p>
-      ))}
       {section.items ? (
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {section.items.map((item) => (
@@ -127,6 +122,11 @@ function GuideSection({ section }) {
           ))}
         </ul>
       ) : null}
+      {section.paragraphs?.map((paragraph) => (
+        <p key={paragraph} className="mt-4 text-base leading-8 text-slate-700">
+          {paragraph}
+        </p>
+      ))}
       {attention ? (
         <div className="mt-5 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-amber-900">
           <Stethoscope className="h-4 w-4" aria-hidden="true" />
@@ -153,7 +153,7 @@ export default function GuideArticle({ guide }) {
 
       <header className="border-b border-slate-100 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-4 py-4 sm:px-6 lg:px-8">
-          <Link href="/" aria-label="HerCalida — início">
+          <Link href="/" aria-label="HerCalida — início" className="shrink-0">
             <Image
               src="/NovaLogo.png"
               alt="HerCalida"

@@ -42,21 +42,12 @@ export const metadata = {
     title: "HerCalida | Saúde feminina com contexto e privacidade",
     description:
       "Um acompanhamento que evolui com seus registros, com dados locais por padrão.",
-    images: [
-      {
-        url: "/HerCalida.png",
-        width: 1200,
-        height: 1500,
-        alt: "HerCalida — saúde feminina com contexto",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "HerCalida | Saúde feminina com contexto e privacidade",
     description:
       "Acompanhe ciclo, rotina, sintomas e fases da vida com escolhas claras sobre seus dados.",
-    images: ["/HerCalida.png"],
   },
   robots: {
     index: true,
