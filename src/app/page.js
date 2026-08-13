@@ -30,13 +30,36 @@ import {
 } from "lucide-react";
 
 import { db } from "../lib/firebase";
+import { trackEvent } from "../lib/analytics";
 
 const navigation = [
+  ["/guias", "Guias"],
   ["#produto", "O produto"],
   ["#como-funciona", "Como funciona"],
   ["#calie", "Calie"],
   ["#planos", "Planos"],
   ["#privacidade", "Privacidade"],
+];
+
+const featuredGuides = [
+  {
+    slug: "ciclo-menstrual",
+    category: "Ciclo menstrual",
+    title: "Como entender as fases do ciclo menstrual",
+    description: "Menstruação, fase folicular, ovulação e fase lútea sem complicação.",
+  },
+  {
+    slug: "inicio-da-gravidez",
+    category: "Gravidez",
+    title: "O que muda no corpo no início da gravidez?",
+    description: "Sintomas comuns, confirmação, pré-natal e sinais que pedem avaliação.",
+  },
+  {
+    slug: "primeiros-sinais-menopausa",
+    category: "Climatério e menopausa",
+    title: "Primeiros sinais da menopausa",
+    description: "Mudanças do ciclo, ondas de calor, sono, humor e quando buscar cuidado.",
+  },
 ];
 
 const features = [
@@ -160,12 +183,28 @@ function BetaForm({ compact = false }) {
 
     setStatus("loading");
     try {
+      const searchParams = new URLSearchParams(window.location.search);
+      const utmSource = searchParams.get("utm_source");
+      const utmMedium = searchParams.get("utm_medium");
+      const utmCampaign = searchParams.get("utm_campaign");
+      const utmContent = searchParams.get("utm_content");
+
       await addDoc(collection(db, "lista_espera"), {
         email: normalizedEmail,
         dataCadastro: serverTimestamp(),
-        origem: "landing_page_beta_fechado",
+        origem: utmSource ? `landing_page_${utmSource}` : "landing_page_direto",
+        paginaOrigem: window.location.pathname,
+        utmSource,
+        utmMedium,
+        utmCampaign,
+        utmContent,
         finalidade: "convite_beta_e_novidades_do_produto",
-        versaoPoliticaPrivacidade: "2026-08-12",
+        versaoPoliticaPrivacidade: "2026-08-13",
+      });
+      trackEvent("beta_signup", {
+        form_variant: compact ? "footer" : "main",
+        campaign: utmCampaign || "none",
+        source: utmSource || "direct",
       });
       setStatus("success");
       setEmail("");
@@ -444,6 +483,52 @@ export default function HerCalidaLandingPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section id="guias" className="border-b border-slate-100 bg-white py-20 md:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div className="max-w-3xl">
+                <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">
+                  Guias educativos
+                </p>
+                <h2 className="font-serif text-3xl font-bold leading-tight text-slate-950 sm:text-4xl md:text-5xl">
+                  Comece pela dúvida que trouxe você até aqui.
+                </h2>
+                <p className="mt-5 max-w-2xl leading-7 text-slate-600">
+                  Respostas diretas, linguagem acolhedora, fontes institucionais e limites claros sobre quando procurar atendimento.
+                </p>
+              </div>
+              <Link
+                href="/guias"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 text-sm font-bold text-slate-800 transition hover:border-rose-200 hover:bg-rose-50"
+              >
+                Ver todos os guias <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {featuredGuides.map((guide) => (
+                <Link
+                  key={guide.slug}
+                  href={`/guias/${guide.slug}`}
+                  onClick={() => trackEvent("guide_click", { guide_slug: guide.slug, location: "home" })}
+                  className="group flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50/50 p-6 transition hover:-translate-y-1 hover:border-rose-200 hover:bg-white hover:shadow-xl hover:shadow-rose-100/50"
+                >
+                  <BookOpen className="mb-5 h-6 w-6 text-rose-500" strokeWidth={1.7} aria-hidden="true" />
+                  <span className="text-xs font-black uppercase tracking-[0.13em] text-rose-500">
+                    {guide.category}
+                  </span>
+                  <h3 className="mt-3 font-serif text-xl font-bold leading-snug text-slate-950">
+                    {guide.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{guide.description}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-fuchsia-700">
+                    Ler guia <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

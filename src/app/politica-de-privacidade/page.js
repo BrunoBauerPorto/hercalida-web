@@ -332,7 +332,8 @@ export default function PoliticaPrivacidade() {
                     <p className={paragraphClass}>
                       Esses dados são utilizados para segurança, prevenção de abuso, entrega de
                       mensagens técnicas, configuração do app e funcionamento dos serviços. A
-                      versão atual não utiliza Firebase Analytics nem Firebase Crashlytics.
+                      versão atual do aplicativo não utiliza Firebase Analytics nem Firebase
+                      Crashlytics. A medição opcional do site é descrita na seção 10.
                     </p>
                   </Subsection>
 
@@ -349,9 +350,9 @@ export default function PoliticaPrivacidade() {
                   <Subsection id="dados-beta" title="4.8 Lista de interesse no beta">
                     <p className={paragraphClass}>
                       Quando uma pessoa preenche o formulário do site, o HerCalida registra o
-                      e-mail informado, a data do cadastro, a origem do formulário, a finalidade
-                      da comunicação e a versão da Política de Privacidade vigente. Não são
-                      solicitados dados de saúde nesse formulário.
+                      e-mail informado, a data do cadastro, a página de origem, parâmetros UTM
+                      presentes no endereço, a finalidade da comunicação e a versão da Política de
+                      Privacidade vigente. Não são solicitados dados de saúde nesse formulário.
                     </p>
                   </Subsection>
 
@@ -398,6 +399,10 @@ export default function PoliticaPrivacidade() {
                     <li>
                       administrar a lista de interesse, enviar convites para o beta fechado e
                       comunicar novidades relevantes do produto;
+                    </li>
+                    <li>
+                      quando autorizado no site, medir visitas, origem de campanhas e interações
+                      para avaliar quais conteúdos são úteis;
                     </li>
                     <li>cumprir obrigações legais e atender solicitações de suporte e de direitos.</li>
                   </BulletList>
@@ -551,8 +556,21 @@ export default function PoliticaPrivacidade() {
                     O app poderá obter arquivos tipográficos da infraestrutura Google Fonts, que
                     poderá receber dados técnicos como IP e informações da requisição. O site oficial
                     é hospedado pela Vercel, que poderá tratar IP, agente do navegador e registros de
-                    acesso para entregar e proteger a página, mesmo sem cookies de publicidade ou
-                    ferramenta própria de analytics do HerCalida.
+                    acesso para entregar e proteger a página.
+                  </p>
+                  <p className={paragraphClass}>
+                    O site oferece uma medição opcional pelo Google Analytics 4. Ela só é carregada
+                    depois que a pessoa escolhe <strong>Autorizar medição</strong>. Quando autorizada,
+                    pode tratar endereço IP e características técnicas do navegador, páginas
+                    visitadas, data e duração aproximada da visita, origem ou referência do acesso,
+                    parâmetros UTM e interações como compartilhamento de guias e cadastro no beta.
+                    Os registros de saúde mantidos no aplicativo não são enviados ao Analytics.
+                  </p>
+                  <p className={paragraphClass}>
+                    A escolha fica salva no navegador e pode ser revista pelo botão
+                    <strong> Privacidade</strong> exibido no site. Recusar a medição não impede o
+                    acesso aos guias, ao formulário ou às demais páginas. O HerCalida não ativa
+                    sinais do Google nem personalização de anúncios nessa configuração.
                   </p>
                   <p className={paragraphClass}>
                     Consulte a{" "}
@@ -577,7 +595,8 @@ export default function PoliticaPrivacidade() {
                     <li>
                       com a <strong>Google</strong>, para Firebase AI Logic, Gemini Developer API,
                       App Check, Play Integrity, Cloud Messaging, Remote Config, Cloud Firestore,
-                      Google Fonts e futuras compras na Google Play;
+                      Google Fonts, Google Analytics autorizado no site e futuras compras na Google
+                      Play;
                     </li>
                     <li>
                       com a <strong>Vercel</strong>, para hospedagem e segurança do site;
@@ -676,6 +695,17 @@ export default function PoliticaPrivacidade() {
                       O e-mail da lista de interesse será mantido enquanto for necessário para
                       administrar o beta e enviar as novidades solicitadas, ou até que a pessoa peça
                       sua exclusão pelo canal de privacidade. A retirada da lista é gratuita.
+                    </p>
+                  </Subsection>
+
+                  <Subsection id="retencao-analytics" title="13.7 Preferência e dados de medição do site">
+                    <p className={paragraphClass}>
+                      A preferência de medição fica no armazenamento local do navegador até ser
+                      alterada ou apagada. Ao revogar a autorização pelo botão
+                      <strong> Privacidade</strong>, o site desativa novos eventos e tenta remover os
+                      cookies do Google Analytics associados ao domínio HerCalida. Dados já recebidos
+                      pela Google seguem os prazos e controles configurados no serviço e as hipóteses
+                      legais aplicáveis.
                     </p>
                   </Subsection>
                 </Section>
