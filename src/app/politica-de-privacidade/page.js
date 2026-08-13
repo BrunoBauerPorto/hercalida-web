@@ -106,7 +106,7 @@ export default function PoliticaPrivacidade() {
               Política de Privacidade
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 12 de agosto de 2026
+              Última atualização: 13 de agosto de 2026
             </p>
           </div>
         </section>
@@ -354,6 +354,21 @@ export default function PoliticaPrivacidade() {
                       solicitados dados de saúde nesse formulário.
                     </p>
                   </Subsection>
+
+                  <Subsection id="dados-denuncias" title="4.9 Denúncias de respostas da Calie">
+                    <p className={paragraphClass}>
+                      Cada resposta gerada pela Calie oferece o comando <strong>Denunciar
+                      resposta</strong>. Quando a usuária escolhe um motivo e confirma, o HerCalida
+                      envia ao Cloud Firestore somente o texto daquela resposta, o motivo,
+                      identificadores técnicos aleatórios, origem, localidade e a data de recebimento
+                      no servidor.
+                    </p>
+                    <p className={paragraphClass}>
+                      A pergunta, as demais mensagens, nome, perfil, diagnósticos e registros de saúde
+                      não são anexados automaticamente. Se o serviço estiver indisponível, a denúncia
+                      permanece em uma fila criptografada no aparelho para tentativa posterior.
+                    </p>
+                  </Subsection>
                 </Section>
 
                 <Section id="finalidades" number="5" title="Para que os dados são utilizados">
@@ -367,6 +382,10 @@ export default function PoliticaPrivacidade() {
                     <li>programar lembretes locais de contraceptivos, consultas e rotinas;</li>
                     <li>proteger o acesso com PIN e, quando habilitada, biometria;</li>
                     <li>responder às solicitações feitas à Calie após consentimento específico;</li>
+                    <li>
+                      receber e revisar denúncias para moderar respostas e aprimorar filtros e
+                      salvaguardas da Calie;
+                    </li>
                     <li>disponibilizar artigos educativos armazenados no Cloud Firestore;</li>
                     <li>
                       alterar parâmetros operacionais da Calie por meio do Remote Config;
@@ -481,6 +500,12 @@ export default function PoliticaPrivacidade() {
                     ou eficácia contraceptiva, nem substituir atendimento profissional. Como toda IA
                     generativa, ainda pode produzir respostas imprecisas. Em urgências ou diante de
                     sintomas intensos ou persistentes, procure atendimento profissional apropriado.
+                  </p>
+                  <p className={paragraphClass}>
+                    Cada resposta gerada pode ser denunciada no próprio chat. As denúncias são
+                    utilizadas pelo responsável pelo HerCalida para revisar o conteúdo, ajustar
+                    instruções, filtros e salvaguardas e adotar as medidas cabíveis. O envio é uma
+                    ação voluntária e afirmativa da usuária.
                   </p>
                   <p className={paragraphClass}>
                     Consulte os{" "}
@@ -635,7 +660,18 @@ export default function PoliticaPrivacidade() {
                     </div>
                   </Subsection>
 
-                  <Subsection id="retencao-beta" title="13.5 Lista de interesse no beta">
+                  <Subsection id="retencao-denuncias" title="13.5 Denúncias da Calie">
+                    <p className={paragraphClass}>
+                      Denúncias ainda não transmitidas permanecem criptografadas no aparelho até o
+                      envio ou até a exclusão dos dados locais. As denúncias recebidas serão mantidas
+                      pelo período necessário para análise, correção das salvaguardas, prevenção de
+                      reincidência, demonstração de conformidade e exercício de direitos, sendo
+                      depois excluídas ou anonimizadas quando cabível. Como não há identificação
+                      deliberada da usuária, pode não ser possível localizar uma denúncia específica.
+                    </p>
+                  </Subsection>
+
+                  <Subsection id="retencao-beta" title="13.6 Lista de interesse no beta">
                     <p className={paragraphClass}>
                       O e-mail da lista de interesse será mantido enquanto for necessário para
                       administrar o beta e enviar as novidades solicitadas, ou até que a pessoa peça
