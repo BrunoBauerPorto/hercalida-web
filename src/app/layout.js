@@ -60,6 +60,9 @@ export const viewport = {
   themeColor: "#fff7f8",
 };
 
+// Evita que o HTML pré-renderizado permaneça obsoleto por muito tempo na CDN.
+export const revalidate = 300;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>

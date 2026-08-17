@@ -34,4 +34,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 O site oficial é publicado na Hostinger e responde pelo domínio
 [`https://hercalida.com`](https://hercalida.com).
 
+Depois de publicar uma nova versão, limpe o cache da CDN no hPanel da Hostinger
+em **Sites → Painel → Performance → CDN → Limpar cache**. O projeto também
+limita a revalidação do HTML pré-renderizado a cinco minutos para evitar que uma
+versão antiga da landing page permaneça servida por muito tempo.
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

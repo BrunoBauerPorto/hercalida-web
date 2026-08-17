@@ -106,7 +106,7 @@ export default function PoliticaPrivacidade() {
               Política de Privacidade
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 13 de agosto de 2026
+              Última atualização: 17 de agosto de 2026
             </p>
           </div>
         </section>
@@ -331,9 +331,31 @@ export default function PoliticaPrivacidade() {
                     </BulletList>
                     <p className={paragraphClass}>
                       Esses dados são utilizados para segurança, prevenção de abuso, entrega de
-                      mensagens técnicas, configuração do app e funcionamento dos serviços. A
-                      versão atual do aplicativo não utiliza Firebase Analytics nem Firebase
-                      Crashlytics. A medição opcional do site é descrita na seção 10.
+                      mensagens técnicas, configuração do app e funcionamento dos serviços. O
+                      aplicativo não utiliza Firebase Analytics: nenhum evento de uso — telas
+                      abertas, funções acionadas, tempo de permanência — é coletado. A medição
+                      opcional do site é descrita na seção 10.
+                    </p>
+                    <p className={paragraphClass}>
+                      <strong className="font-semibold text-slate-800">
+                        Relatórios de falha.
+                      </strong>{" "}
+                      Quando o aplicativo apresenta um erro, o Firebase Crashlytics registra o
+                      ponto do código em que a falha ocorreu, o tipo do erro, a versão do
+                      aplicativo, o modelo e a versão do sistema do aparelho, o estado de memória e
+                      armazenamento no momento e um identificador aleatório da instalação.
+                    </p>
+                    <p className={paragraphClass}>
+                      Os registros de saúde não são incluídos. O relatório não é associado ao nome,
+                      ao e-mail nem a qualquer identificador da usuária. Nos trechos que lidam com
+                      importação, exportação e leitura dos registros, o aplicativo envia apenas o
+                      tipo do erro e descarta a mensagem, para que nenhum conteúdo pessoal viaje
+                      junto por essa via.
+                    </p>
+                    <p className={paragraphClass}>
+                      A base legal é o legítimo interesse em manter o aplicativo funcionando
+                      (art. 7º, IX, da LGPD). A coleta pode ser desativada a qualquer momento em
+                      Perfil → Segurança → “Ajudar a corrigir falhas”.
                     </p>
                   </Subsection>
 
