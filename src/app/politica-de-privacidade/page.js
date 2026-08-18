@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
   ArrowLeft,
-  Bot,
   CheckCircle2,
   Database,
   Heart,
@@ -106,7 +105,7 @@ export default function PoliticaPrivacidade() {
               Política de Privacidade
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 17 de agosto de 2026
+              Última atualização: 18 de agosto de 2026
             </p>
           </div>
         </section>
@@ -142,7 +141,7 @@ export default function PoliticaPrivacidade() {
                   ele será solicitado de forma específica, destacada e por uma ação afirmativa
                   dentro do aplicativo. A simples leitura desta Política, a compra de um plano ou
                   o uso geral do app não substituem o consentimento específico para o tratamento
-                  remoto de dados pela HerCalida Assistente.
+                  remoto de dados pela Calie.
                 </p>
 
                 <nav
@@ -153,7 +152,7 @@ export default function PoliticaPrivacidade() {
                   <div className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
                     {[
                       ["#responsavel", "Responsável e abrangência"],
-                      ["#modalidades", "Gratuito, Premium e Assistente"],
+                      ["#modalidades", "Gratuito e Completo"],
                       ["#dados", "Dados tratados"],
                       ["#finalidades", "Finalidades e bases legais"],
                       ["#seguranca", "Armazenamento e segurança"],
@@ -197,10 +196,9 @@ export default function PoliticaPrivacidade() {
                 <Section id="abrangencia" number="2" title="A quem e a que esta Política se aplica">
                   <p className={paragraphClass}>
                     Esta Política se aplica ao aplicativo HerCalida para Android, ao site oficial e
-                    às modalidades Gratuito, Premium e HerCalida Assistente. Durante testes beta,
-                    determinados recursos pagos poderão ser liberados temporariamente e sem
-                    cobrança. A liberação para teste não altera as regras de privacidade descritas
-                    aqui.
+                    às modalidades Gratuito e Completo. Durante o período de testes,
+                    os recursos do plano Completo ficam liberados sem cobrança. A liberação para
+                    teste não altera as regras de privacidade descritas aqui.
                   </p>
                   <p className={paragraphClass}>
                     O HerCalida não é um dispositivo médico, não realiza diagnóstico, não prescreve
@@ -209,21 +207,19 @@ export default function PoliticaPrivacidade() {
                 </Section>
 
                 <Section id="modalidades" number="3" title="Modalidades de acesso e privacidade">
-                  <div className="not-prose grid gap-4 lg:grid-cols-3">
+                  <div className="not-prose grid gap-4 lg:grid-cols-2">
                     <PlanCard icon={Heart} title="Gratuito">
-                      Recursos essenciais de registro, acompanhamento, lembretes, aprendizado local
-                      do ciclo e conteúdo educativo. Os registros ficam, por padrão, criptografados
-                      no aparelho, sem publicidade comportamental.
+                      Registro, acompanhamento, lembretes, aprendizado local do ciclo e conteúdo
+                      educativo. Inclui a exportação dos próprios dados, sem limite de vezes: uma
+                      cópia dos seus registros nunca depende de assinatura. Os registros ficam, por
+                      padrão, criptografados no aparelho, sem publicidade comportamental.
                     </PlanCard>
-                    <PlanCard icon={Sparkles} title="Premium">
-                      Poderá oferecer análises locais, relatórios e outras ferramentas indicadas na
-                      contratação. Assinar o Premium não autoriza o envio de registros de saúde para
-                      uma inteligência artificial.
-                    </PlanCard>
-                    <PlanCard icon={Bot} title="HerCalida Assistente">
-                      Inclui a Calie e outros recursos de IA identificados no app. É opcional,
-                      destinada a maiores de 18 anos e depende de consentimento específico,
-                      separado e revogável.
+                    <PlanCard icon={Sparkles} title="Completo">
+                      Acrescenta o relatório para levar à consulta, a leitura dos padrões do ciclo
+                      ao longo dos meses e a Calie. Assinar o plano Completo <strong>não</strong>
+                      {" "}autoriza, por si só, o envio de registros de saúde para uma inteligência
+                      artificial: a Calie continua dependendo de consentimento específico, separado
+                      e revogável, e é destinada a maiores de 18 anos.
                     </PlanCard>
                   </div>
                   <p className={`${paragraphClass} mt-6`}>
@@ -234,11 +230,9 @@ export default function PoliticaPrivacidade() {
                     funcionando.
                   </p>
                   <p className={paragraphClass}>
-                    Quando a cobrança estiver disponível, a loja de aplicativos processará o
-                    pagamento. O HerCalida poderá receber apenas informações necessárias para
-                    reconhecer e administrar a compra, como produto, situação da assinatura, token
-                    da compra e datas da transação. O HerCalida não recebe o número completo do
-                    cartão nem os dados bancários utilizados na Google Play.
+                    Quem processa o pagamento é a Google Play. O HerCalida não recebe o número
+                    do cartão nem os dados bancários utilizados na loja, e não tem acesso a eles em
+                    momento algum.
                   </p>
                 </Section>
 
@@ -361,11 +355,28 @@ export default function PoliticaPrivacidade() {
 
                   <Subsection id="dados-pagamento" title="4.7 Dados de pagamento e assinatura">
                     <p className={paragraphClass}>
-                      Quando as assinaturas forem implementadas, a Google Play poderá tratar dados
-                      de pagamento, faturamento e conta Google. O HerCalida poderá tratar o
-                      identificador do produto, token de compra, status da assinatura, datas de
-                      início, renovação e cancelamento e metadados necessários para liberar o acesso
-                      e prestar suporte.
+                      A cobrança da assinatura é feita pela Google Play, que trata os dados de
+                      pagamento, faturamento e conta Google conforme as políticas dela. O HerCalida
+                      não participa desse tratamento.
+                    </p>
+                    <p className={paragraphClass}>
+                      Para saber se o acesso deve estar liberado, o aplicativo pergunta à Google
+                      Play, dentro do próprio aparelho, se existe assinatura ativa naquela conta.
+                      A resposta traz o identificador do produto e um comprovante técnico da compra.
+                      Esses dados são usados no instante da verificação e descartados em seguida.
+                    </p>
+                    <div className="not-prose mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm leading-relaxed text-emerald-950">
+                      <strong>O que fica gravado é um único indicador:</strong> assinatura ativa,
+                      sim ou não. O comprovante de compra não é armazenado, e nada disso é enviado
+                      para fora do aparelho — o HerCalida não opera servidor de validação de
+                      compras. A consequência é que a verificação acontece localmente, o que
+                      reduz a quantidade de dados seus em circulação.
+                    </div>
+                    <p className={paragraphClass}>
+                      Quem participou do período de testes recebe um prazo de acesso completo por
+                      cortesia. Para isso, o aplicativo grava no próprio aparelho a data em que essa
+                      cortesia termina. Essa data acompanha o arquivo de exportação, para não se
+                      perder em uma troca de celular.
                     </p>
                   </Subsection>
 
@@ -442,7 +453,7 @@ export default function PoliticaPrivacidade() {
                   <BulletList>
                     <li>
                       <strong>consentimento específico e destacado</strong>, especialmente para
-                      dados sensíveis e envio de contexto à HerCalida Assistente;
+                      dados sensíveis e envio de contexto à Calie;
                     </li>
                     <li>
                       <strong>execução de contrato ou de procedimentos solicitados</strong>, para
@@ -690,9 +701,13 @@ export default function PoliticaPrivacidade() {
 
                   <Subsection id="retencao-assinaturas" title="13.4 Assinaturas e obrigações legais">
                     <p className={paragraphClass}>
-                      Dados de compra, suporte e transação poderão ser mantidos durante o prazo
-                      necessário para prestar o serviço, prevenir fraude, exercer direitos e cumprir
-                      obrigações legais. Depois disso, deverão ser excluídos ou anonimizados.
+                      Os registros de compra e transação ficam com a Google Play, que os mantém
+                      pelo prazo das políticas dela e os disponibiliza ao desenvolvedor no console
+                      da loja, para suporte, prevenção de fraude, exercício de direitos e
+                      cumprimento de obrigações legais. O aplicativo em si não guarda histórico de
+                      compras — apenas o indicador descrito no item 4.7. Mensagens de suporte
+                      trocadas por e-mail são mantidas pelo prazo necessário e depois excluídas ou
+                      anonimizadas.
                     </p>
                     <div className="not-prose mb-6 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950">
                       <strong>Importante:</strong> apagar os dados ou desinstalar o app não cancela
@@ -770,7 +785,7 @@ export default function PoliticaPrivacidade() {
                 <Section id="menores" number="15" title="Crianças e adolescentes">
                   <p className={paragraphClass}>
                     O HerCalida não é direcionado a crianças. A Calie e qualquer processamento
-                    remoto pela HerCalida Assistente são bloqueados para menores de 18 anos.
+                    remoto de dados são bloqueados para menores de 18 anos.
                   </p>
                   <p className={paragraphClass}>
                     Adolescentes podem utilizar recursos locais de acompanhamento menstrual e de
@@ -825,7 +840,7 @@ export default function PoliticaPrivacidade() {
                   </p>
                   <p className={paragraphClass}>
                     Regras comerciais, preços, renovação, cancelamento, reembolso, testes gratuitos
-                    e limites dos planos deverão ser descritos separadamente nos Termos de Uso e nas
+                    e limites dos planos são descritos nos Termos de Uso e nas
                     telas de contratação.
                   </p>
                 </Section>

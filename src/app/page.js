@@ -113,42 +113,35 @@ const features = [
 const plans = [
   {
     name: "Gratuito",
-    eyebrow: "Para começar",
-    description: "A base para registrar sua rotina e acompanhar o ciclo com privacidade.",
+    eyebrow: "Para sempre",
+    description:
+      "Registrar a sua rotina, acompanhar o ciclo e levar seus dados embora quando quiser.",
+    price: "Sem custo",
+    priceNote: "Sem cartão, sem prazo.",
     features: [
       "Calendário e diário menstrual",
       "Registros de rotina e sintomas",
       "Aprendizado local do ciclo",
       "Lembretes de contraceptivos",
+      "Exportação dos seus dados, sem limite",
       "Conteúdo educativo",
     ],
     featured: false,
   },
   {
-    name: "Premium",
+    name: "Completo",
     eyebrow: "Mais profundidade",
-    description: "Ferramentas avançadas para organizar e visualizar sua jornada de saúde.",
+    description:
+      "A Calie, o relatório para a consulta e a leitura dos seus padrões ao longo dos meses.",
+    price: "R$ 13,99/mês",
+    priceNote: "ou R$ 119,99 por ano. 14 dias grátis para quem nunca assinou.",
     features: [
       "Tudo do plano Gratuito",
-      "Insights e análises avançadas",
-      "Relatórios e dossiês em PDF",
-      "Recursos ampliados por fase de vida",
-      "Mais formas de acompanhar tendências",
+      "Converse com a Calie quando quiser",
+      "Relatório completo para levar à consulta",
+      "Seus padrões de ciclo explicados",
     ],
     featured: true,
-  },
-  {
-    name: "HerCalida Assistente",
-    eyebrow: "Com a Calie",
-    description: "Uma camada de linguagem para conversar sobre o contexto dos seus registros.",
-    features: [
-      "Tudo do plano Premium",
-      "Chat contextual com a Calie",
-      "Observações personalizadas do dia",
-      "Resumos apoiados nos seus registros",
-      "Consentimento separado e revogável",
-    ],
-    featured: false,
   },
 ];
 
@@ -311,9 +304,10 @@ function PlanCard({ plan }) {
       <p className={`mb-7 min-h-16 text-sm leading-6 ${plan.featured ? "text-slate-300" : "text-slate-600"}`}>
         {plan.description}
       </p>
-      <p className={`mb-5 border-y py-4 text-sm font-bold ${plan.featured ? "border-white/10 text-white" : "border-slate-100 text-slate-900"}`}>
-        Valores e condições serão informados no lançamento.
-      </p>
+      <div className={`mb-5 border-y py-4 ${plan.featured ? "border-white/10" : "border-slate-100"}`}>
+        <p className={`text-lg font-bold ${plan.featured ? "text-white" : "text-slate-900"}`}>{plan.price}</p>
+        <p className={`mt-1 text-xs leading-5 ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{plan.priceNote}</p>
+      </div>
       <ul className="mb-8 flex-1 space-y-3">
         {plan.features.map((feature) => (
           <li key={feature} className={`flex gap-3 text-sm leading-5 ${plan.featured ? "text-slate-200" : "text-slate-600"}`}>
@@ -736,14 +730,14 @@ export default function HerCalidaLandingPage() {
         <section id="planos" className="border-y border-slate-100 bg-slate-50/70 py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Três formas de usar</p>
+              <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Duas formas de usar</p>
               <h2 className="font-serif text-3xl font-bold text-slate-950 sm:text-4xl md:text-5xl">Escolha a profundidade que combina com você.</h2>
               <p className="mt-5 leading-7 text-slate-600">A assinatura de um plano nunca será tratada como autorização automática para enviar dados à IA.</p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3 md:pt-4">
+            <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:pt-4">
               {plans.map((plan) => <PlanCard key={plan.name} plan={plan} />)}
             </div>
-            <p className="mx-auto mt-10 max-w-3xl text-center text-xs leading-5 text-slate-500">Durante o beta fechado, recursos poderão ser disponibilizados temporariamente para avaliação. A composição final, os preços e as condições serão informados antes de qualquer cobrança.</p>
+            <p className="mx-auto mt-10 max-w-3xl text-center text-xs leading-5 text-slate-500">A assinatura é cobrada pelo Google Play e renova sozinha até você cancelar. O cancelamento é feito na Central de Assinaturas da loja, a qualquer momento, e o acesso continua até o fim do período já pago. Os valores exibidos na loja prevalecem sobre esta página.</p>
           </div>
         </section>
 
@@ -792,6 +786,7 @@ export default function HerCalidaLandingPage() {
               <ul className="space-y-3 text-sm text-slate-600">
                 {navigation.map(([href, label]) => <li key={href}><a href={href} className="hover:text-rose-500">{label}</a></li>)}
                 <li><Link href="/politica-de-privacidade" className="hover:text-rose-500">Política de Privacidade</Link></li>
+                <li><Link href="/termos-de-uso" className="hover:text-rose-500">Termos de Uso</Link></li>
               </ul>
             </div>
             <div>

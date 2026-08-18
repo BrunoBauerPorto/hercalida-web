@@ -38,6 +38,12 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.4,
     },
+    {
+      url: "https://hercalida.com/termos-de-uso",
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
   ];
 }
 
