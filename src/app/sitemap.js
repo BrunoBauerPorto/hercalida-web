@@ -1,4 +1,4 @@
-const lastModified = new Date("2026-08-13T12:00:00-03:00");
+const lastModified = new Date("2026-08-22T12:00:00-03:00");
 
 export default function sitemap() {
   return [
@@ -46,4 +46,3 @@ export default function sitemap() {
     },
   ];
 }
-

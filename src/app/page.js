@@ -74,29 +74,50 @@ const features = [
     accent: "bg-fuchsia-50 text-fuchsia-700",
   },
   {
-    icon: BellRing,
-    title: "Lembretes de contraceptivos",
+    icon: HeartPulse,
+    title: "Gestação e pós-parto com segurança",
     description:
-      "Horários, pausas e próximos lembretes são organizados no aparelho para acompanhar a rotina configurada.",
-    accent: "bg-amber-50 text-amber-700",
+      "Acompanhe agenda, sintomas e percepção dos movimentos fetais. Mudanças relevantes direcionam para a equipe ou maternidade, sem avaliar o bem-estar fetal.",
+    accent: "bg-rose-50 text-rose-700",
   },
   {
     icon: Activity,
     title: "Rotina e sintomas",
     description:
-      "Registre dor, sono, emoções, hidratação, alimentação, exercícios e outros sinais do seu dia.",
-    accent: "bg-rose-50 text-rose-700",
+      "Registre dor, sono, emoções, hidratação, alimentação, exercícios, sangramento, corrimento e outros sinais do dia.",
+    accent: "bg-amber-50 text-amber-700",
+  },
+  {
+    icon: BellRing,
+    title: "Lembretes que acompanham a rotina",
+    description:
+      "Pílula, pausa, consultas, check-in diário e hidratação são organizados no aparelho conforme as escolhas da usuária.",
+    accent: "bg-violet-50 text-violet-700",
+  },
+  {
+    icon: BookOpen,
+    title: "Acompanhamento Billings",
+    description:
+      "Registre sensação, aparência, sangramento e fatores de interferência. O app organiza o histórico, sem identificar pico ou confirmar ovulação.",
+    accent: "bg-emerald-50 text-emerald-700",
+  },
+  {
+    icon: Database,
+    title: "Controle financeiro local",
+    description:
+      "Organize receitas, débitos e saldo mensal. Esses lançamentos ficam fora da Calie e dos Insights de saúde.",
+    accent: "bg-sky-50 text-sky-700",
   },
   {
     icon: TrendingUp,
-    title: "Insights com evidência",
+    title: "Padrões explicados no Premium",
     description:
       "Veja tendências apoiadas nos seus próprios registros, com linguagem proporcional à quantidade de dados disponível.",
     accent: "bg-sky-50 text-sky-700",
   },
   {
     icon: FileText,
-    title: "Relatórios para consultas",
+    title: "Relatórios completos no Premium",
     description:
       "Gere visões organizadas e relatórios em PDF para levar informações mais claras ao atendimento profissional.",
     accent: "bg-violet-50 text-violet-700",
@@ -119,27 +140,46 @@ const plans = [
     price: "Sem custo",
     priceNote: "Sem cartão, sem prazo.",
     features: [
-      "Calendário e diário menstrual",
+      "Calendário, diário e histórico",
+      "Ciclo, gestação, climatério e pós-parto",
       "Registros de rotina e sintomas",
       "Aprendizado local do ciclo",
-      "Lembretes de contraceptivos",
+      "Lembretes e recursos de segurança",
+      "Acompanhamento observacional Billings",
+      "Controle financeiro local",
       "Exportação dos seus dados, sem limite",
       "Conteúdo educativo",
     ],
     featured: false,
   },
   {
-    name: "Completo",
-    eyebrow: "Mais profundidade",
+    name: "Premium",
+    eyebrow: "Análises sem IA generativa",
     description:
-      "A Calie, o relatório para a consulta e a leitura dos seus padrões ao longo dos meses.",
-    price: "R$ 13,99/mês",
-    priceNote: "ou R$ 119,99 por ano. 14 dias grátis para quem nunca assinou.",
+      "Relatórios completos e explicações determinísticas construídas a partir dos seus registros.",
+    price: "R$ 9,90/mês",
+    priceNote: "ou R$ 79,90 por ano.",
     features: [
       "Tudo do plano Gratuito",
-      "Converse com a Calie quando quiser",
-      "Relatório completo para levar à consulta",
-      "Seus padrões de ciclo explicados",
+      "Relatórios completos para consultas",
+      "Padrões e comparações explicados",
+      "Sem conversa generativa com a Calie",
+    ],
+    featured: false,
+  },
+  {
+    name: "HerCalida Assistente",
+    eyebrow: "Experiência mais completa",
+    description:
+      "Tudo do Premium, com conversas contextuais da Calie a partir dos registros que você autorizar.",
+    price: "R$ 17,90/mês",
+    priceNote: "ou R$ 139,90 por ano.",
+    features: [
+      "Tudo do plano Premium",
+      "Conversa contextual com a Calie",
+      "Até 200 mensagens por mês",
+      "Limite de 30 mensagens por dia",
+      "Consentimento específico e revogável",
     ],
     featured: true,
   },
@@ -159,12 +199,17 @@ const faqItems = [
   {
     question: "A Calie é obrigatória?",
     answer:
-      "Não. A Calie é opcional, destinada a maiores de 18 anos e depende de consentimento específico. Você pode revogar a autorização sem perder os recursos locais compatíveis com seu plano.",
+      "Não. A Calie faz parte somente do plano HerCalida Assistente, é destinada a maiores de 18 anos e depende de consentimento específico. Você pode revogar a autorização sem perder os demais recursos compatíveis com seu plano.",
+  },
+  {
+    question: "Qual é a diferença entre Premium e Assistente?",
+    answer:
+      "O Premium libera relatórios completos e padrões explicados sem conversa generativa. O HerCalida Assistente inclui tudo do Premium e acrescenta a Calie, com até 200 mensagens por mês e 30 por dia.",
   },
   {
     question: "Quando o aplicativo estará disponível?",
     answer:
-      "O HerCalida está em preparação para um beta fechado distribuído pela Google Play. Cadastre seu e-mail para receber informações sobre as próximas vagas de teste.",
+      "O HerCalida já está em beta fechado pela Google Play e segue em preparação para produção. Cadastre seu e-mail para receber novidades sobre testes e lançamento.",
   },
 ];
 
@@ -194,8 +239,8 @@ function BetaForm({ compact = false }) {
         utmMedium,
         utmCampaign,
         utmContent,
-        finalidade: "convite_beta_e_novidades_do_produto",
-        versaoPoliticaPrivacidade: "2026-08-13",
+        finalidade: "novidades_beta_e_lancamento_do_produto",
+        versaoPoliticaPrivacidade: "2026-08-22",
       });
       trackEvent("beta_signup", {
         form_variant: compact ? "footer" : "main",
@@ -211,7 +256,7 @@ function BetaForm({ compact = false }) {
   }
 
   const buttonLabel = {
-    idle: "Quero participar do beta",
+    idle: "Quero receber novidades",
     loading: "Enviando...",
     success: "Cadastro realizado",
     error: "Tentar novamente",
@@ -250,7 +295,7 @@ function BetaForm({ compact = false }) {
       <div aria-live="polite" className="mt-3 min-h-5 text-xs leading-relaxed text-slate-500">
         {status === "success" ? (
           <span className="font-medium text-emerald-700">
-            Pronto. Avisaremos quando houver novidades sobre o beta.
+            Pronto. Avisaremos sobre novidades do beta e do lançamento.
           </span>
         ) : status === "error" ? (
           <span className="font-medium text-red-600">
@@ -258,7 +303,7 @@ function BetaForm({ compact = false }) {
           </span>
         ) : (
           <span>
-            Usaremos seu e-mail somente para convites do beta e novidades do HerCalida. Leia a{" "}
+            Usaremos seu e-mail somente para novidades do beta e do lançamento do HerCalida. Leia a{" "}
             <Link href="/politica-de-privacidade" className="font-semibold underline underline-offset-2">
               Política de Privacidade
             </Link>
@@ -293,7 +338,7 @@ function PlanCard({ plan }) {
       }`}
     >
       {plan.featured ? (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-rose-400 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.16em] text-white">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-rose-400 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.16em] text-white">
           Mais possibilidades
         </span>
       ) : null}
@@ -326,7 +371,7 @@ function PlanCard({ plan }) {
             : "border border-slate-200 bg-slate-50 text-slate-900 hover:border-rose-300 hover:bg-rose-50"
         }`}
       >
-        Acompanhar o beta
+        Acompanhar o lançamento
       </a>
     </article>
   );
@@ -351,7 +396,7 @@ export default function HerCalidaLandingPage() {
       <div className="border-b border-rose-100 bg-rose-50 px-4 py-2.5 text-center text-xs font-semibold text-rose-900">
         <span className="inline-flex items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-rose-500" aria-hidden="true" />
-          Em preparação para beta fechado no Android pela Google Play
+          Em beta fechado no Android pela Google Play — preparando a produção
         </span>
       </div>
 
@@ -381,7 +426,7 @@ export default function HerCalidaLandingPage() {
               href="#beta"
               className="hidden min-h-11 items-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-bold text-white transition hover:bg-rose-500 sm:inline-flex"
             >
-              Participar do beta
+              Acompanhar lançamento
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <button
@@ -405,7 +450,7 @@ export default function HerCalidaLandingPage() {
                 </a>
               ))}
               <a href="#beta" onClick={closeMenu} className="mt-3 rounded-full bg-slate-950 px-5 py-3.5 text-center font-bold text-white">
-                Participar do beta
+                Acompanhar lançamento
               </a>
             </div>
           </nav>
@@ -430,7 +475,7 @@ export default function HerCalidaLandingPage() {
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
                 <a href="#beta" className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-rose-500 px-7 text-sm font-bold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-0.5 hover:bg-rose-600">
-                  Quero participar do beta
+                  Acompanhar o lançamento
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <a href="#como-funciona" className="inline-flex min-h-13 items-center justify-center rounded-full border border-slate-200 bg-white px-7 text-sm font-bold text-slate-800 transition hover:border-rose-200 hover:bg-rose-50">
@@ -730,11 +775,11 @@ export default function HerCalidaLandingPage() {
         <section id="planos" className="border-y border-slate-100 bg-slate-50/70 py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Duas formas de usar</p>
+              <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Três formas de usar</p>
               <h2 className="font-serif text-3xl font-bold text-slate-950 sm:text-4xl md:text-5xl">Escolha a profundidade que combina com você.</h2>
               <p className="mt-5 leading-7 text-slate-600">A assinatura de um plano nunca será tratada como autorização automática para enviar dados à IA.</p>
             </div>
-            <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:pt-4">
+            <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3 md:pt-4">
               {plans.map((plan) => <PlanCard key={plan.name} plan={plan} />)}
             </div>
             <p className="mx-auto mt-10 max-w-3xl text-center text-xs leading-5 text-slate-500">A assinatura é cobrada pelo Google Play e renova sozinha até você cancelar. O cancelamento é feito na Central de Assinaturas da loja, a qualquer momento, e o acesso continua até o fim do período já pago. Os valores exibidos na loja prevalecem sobre esta página.</p>
@@ -745,9 +790,9 @@ export default function HerCalidaLandingPage() {
           <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_50%,rgba(251,113,133,0.22),transparent_25%),radial-gradient(circle_at_80%_50%,rgba(217,70,239,0.14),transparent_25%)]" />
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
             <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-rose-100 text-rose-600"><Sparkles className="h-6 w-6" /></div>
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Beta fechado</p>
-            <h2 className="font-serif text-3xl font-bold leading-tight text-slate-950 sm:text-4xl md:text-5xl">Ajude a construir a próxima fase do HerCalida.</h2>
-            <p className="mx-auto mt-5 mb-8 max-w-2xl leading-7 text-slate-600">Cadastre seu e-mail para receber informações sobre vagas, instalação pela Google Play e novidades relevantes do produto.</p>
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Beta fechado em andamento</p>
+            <h2 className="font-serif text-3xl font-bold leading-tight text-slate-950 sm:text-4xl md:text-5xl">Acompanhe o caminho até o lançamento.</h2>
+            <p className="mx-auto mt-5 mb-8 max-w-2xl leading-7 text-slate-600">Cadastre seu e-mail para receber informações sobre os testes, a chegada à produção e novidades relevantes do produto.</p>
             <BetaForm />
           </div>
         </section>
@@ -790,8 +835,8 @@ export default function HerCalidaLandingPage() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-3 text-lg font-bold text-slate-950">Receba novidades do beta</h2>
-              <p className="mb-5 text-sm leading-6 text-slate-600">Um canal direto para convites e atualizações importantes.</p>
+              <h2 className="mb-3 text-lg font-bold text-slate-950">Receba novidades do HerCalida</h2>
+              <p className="mb-5 text-sm leading-6 text-slate-600">Um canal direto para atualizações do beta e do lançamento.</p>
               <BetaForm compact />
             </div>
           </div>

@@ -90,7 +90,7 @@ export default function TermosDeUso() {
               Termos de Uso
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 18 de agosto de 2026
+              Última atualização: 22 de agosto de 2026
             </p>
           </div>
         </section>
@@ -107,8 +107,9 @@ export default function TermosDeUso() {
                     O HerCalida é uma ferramenta de registro e organização em saúde — não faz
                     diagnóstico e não substitui profissional. Seus registros ficam no seu aparelho
                     e você pode exportá-los quando quiser, assinando ou não. A assinatura é
-                    opcional, cobrada pelo Google Play, renova sozinha e pode ser cancelada a
-                    qualquer momento. Você tem 7 dias para desistir da compra, por lei.
+                    opcional. Os planos Premium e HerCalida Assistente são cobrados pelo Google
+                    Play, renovam automaticamente e podem ser cancelados a qualquer momento. Você
+                    tem 7 dias para desistir da compra, por lei.
                   </p>
                 </div>
 
@@ -194,17 +195,26 @@ export default function TermosDeUso() {
                   <Subsection id="planos-composicao" title="5.1 O que cada plano inclui">
                     <p className={paragraphClass}>
                       O plano <strong>Gratuito</strong> inclui calendário e diário menstrual,
-                      registros de rotina e sintomas, aprendizado local do ciclo, lembretes de
-                      contraceptivos, conteúdo educativo e a exportação dos seus dados sem limite.
+                      registros de rotina e sintomas, aprendizado local do ciclo, gestação,
+                      climatério, pós-parto, lembretes, recursos de segurança, acompanhamento
+                      observacional Billings, controle financeiro local, conteúdo educativo e a
+                      exportação dos seus dados sem limite.
                     </p>
                     <p className={paragraphClass}>
-                      O plano <strong>Completo</strong> acrescenta as conversas com a Calie, o
-                      relatório completo para levar à consulta e a leitura dos seus padrões de ciclo
-                      ao longo dos meses.
+                      O plano <strong>Premium</strong> inclui tudo do Gratuito e acrescenta
+                      relatórios completos para consultas, padrões e comparações explicados. Esse
+                      nível não inclui conversa generativa com a Calie.
                     </p>
                     <p className={paragraphClass}>
-                      Assinar o plano Completo não autoriza, por si só, o envio de registros de
-                      saúde para inteligência artificial. A Calie continua dependendo do
+                      O plano <strong>HerCalida Assistente</strong> inclui tudo do Premium e
+                      acrescenta a conversa contextual com a Calie, limitada a 200 mensagens por
+                      mês e 30 mensagens por dia. Esses limites são cumulativos: atingir qualquer
+                      um deles interrompe novas mensagens até o dia seguinte ou o próximo mês,
+                      conforme o limite alcançado.
+                    </p>
+                    <p className={paragraphClass}>
+                      Assinar o HerCalida Assistente não autoriza, por si só, o envio de registros
+                      de saúde para inteligência artificial. A Calie continua dependendo do
                       consentimento específico descrito na Política de Privacidade, que pode ser
                       revogado a qualquer momento em Perfil → Segurança e privacidade.
                     </p>
@@ -212,10 +222,10 @@ export default function TermosDeUso() {
 
                   <Subsection id="planos-preco" title="5.2 Preço, cobrança e renovação automática">
                     <p className={paragraphClass}>
-                      A assinatura do plano Completo é oferecida em periodicidade mensal ou anual.
-                      Os valores vigentes são exibidos no aplicativo e na ficha da Google Play antes
-                      da confirmação da compra, e os valores da loja prevalecem sobre qualquer
-                      outra publicação.
+                      As assinaturas Premium e HerCalida Assistente podem ser oferecidas em
+                      periodicidade mensal ou anual. Os valores vigentes são exibidos no aplicativo
+                      e na ficha da Google Play antes da confirmação da compra, e os valores da loja
+                      prevalecem sobre qualquer outra publicação.
                     </p>
                     <Aviso tone="amber" title="A assinatura renova sozinha.">
                       A cobrança é processada pela Google Play e renovada automaticamente ao fim de
@@ -243,7 +253,22 @@ export default function TermosDeUso() {
                     </p>
                   </Subsection>
 
-                  <Subsection id="planos-alteracao" title="5.4 Mudança de preço ou de composição">
+                  <Subsection id="planos-cortesia" title="5.4 Cortesia das testadoras">
+                    <p className={paragraphClass}>
+                      Enquanto a monetização estiver desativada, o acesso ao HerCalida Assistente
+                      pode permanecer liberado sem cobrança. Após pelo menos cinco dias distintos
+                      com registros, o aplicativo concede uma única cortesia de 365 dias e grava
+                      localmente sua data de término.
+                    </p>
+                    <p className={paragraphClass}>
+                      Essa cortesia não é uma assinatura, não se renova automaticamente e não gera
+                      cobrança. Depois que a monetização for ativada, novas instalações não recebem
+                      automaticamente a cortesia; quem já a recebeu preserva o acesso até a data
+                      gravada, conforme as regras da versão instalada.
+                    </p>
+                  </Subsection>
+
+                  <Subsection id="planos-alteracao" title="5.5 Mudança de plano, preço ou composição">
                     <p className={paragraphClass}>
                       Alterações de preço para assinaturas já em vigor seguem o procedimento da
                       Google Play, com aviso prévio e possibilidade de recusa. Recusar a alteração
@@ -253,6 +278,12 @@ export default function TermosDeUso() {
                       Recursos podem ser acrescentados, alterados ou descontinuados. Se um recurso
                       relevante do plano contratado for descontinuado, avisaremos com antecedência
                       razoável pelos canais do aplicativo.
+                    </p>
+                    <p className={paragraphClass}>
+                      Upgrade e downgrade são processados pela Google Play. Quando a mudança for
+                      programada para o período seguinte, o plano atual permanece disponível até o
+                      fim do período já pago. Os registros locais não são apagados pela troca de
+                      nível.
                     </p>
                   </Subsection>
                 </Section>
@@ -265,9 +296,10 @@ export default function TermosDeUso() {
                       até lá em Perfil → Seu acesso.
                     </p>
                     <Aviso tone="emerald" title="Cancelar não tira o que você já pagou.">
-                      O acesso ao plano Completo continua até o fim do período já pago. Depois
-                      disso, o aplicativo volta ao plano Gratuito — e todos os seus registros
-                      continuam lá, visíveis e exportáveis.
+                      O acesso ao plano pago contratado continua até o fim do período já pago.
+                      Depois disso, na ausência de outra assinatura ativa, o aplicativo volta ao
+                      plano Gratuito — e todos os seus registros continuam lá, visíveis e
+                      exportáveis.
                     </Aviso>
                     <p className={paragraphClass}>
                       Desinstalar o aplicativo ou apagar os dados locais <strong>não</strong> cancela
@@ -309,8 +341,9 @@ export default function TermosDeUso() {
                 <Section id="calie" number="7" title="Uso da Calie">
                   <p className={paragraphClass}>
                     A Calie é uma camada de linguagem que organiza e explica o contexto dos seus
-                    registros. Ela pode errar, omitir ou apresentar informação desatualizada, como
-                    qualquer sistema desse tipo.
+                    registros e está disponível somente no plano HerCalida Assistente, para maiores
+                    de 18 anos que concedam o consentimento específico. Ela pode errar, omitir ou
+                    apresentar informação desatualizada, como qualquer sistema desse tipo.
                   </p>
                   <BulletList>
                     <li>ela não faz diagnóstico, não prescreve e não interpreta exames;</li>
@@ -319,8 +352,8 @@ export default function TermosDeUso() {
                       fonte para decisão de saúde;
                     </li>
                     <li>
-                      há limites de uso por dia e por mês, informados no aplicativo, para manter o
-                      serviço sustentável;
+                      o limite atual é de 30 mensagens por dia e 200 por mês, para manter o serviço
+                      sustentável;
                     </li>
                     <li>
                       cada resposta pode ser denunciada pelo comando <strong>Denunciar
@@ -328,8 +361,8 @@ export default function TermosDeUso() {
                     </li>
                   </BulletList>
                   <p className={paragraphClass}>
-                    Revogar o consentimento da Calie mantém todos os recursos locais funcionando
-                    normalmente.
+                    Revogar o consentimento da Calie interrompe o processamento remoto e mantém os
+                    demais recursos compatíveis com o plano funcionando normalmente.
                   </p>
                 </Section>
 

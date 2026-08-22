@@ -105,7 +105,7 @@ export default function PoliticaPrivacidade() {
               Política de Privacidade
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 18 de agosto de 2026
+              Última atualização: 22 de agosto de 2026
             </p>
           </div>
         </section>
@@ -152,7 +152,7 @@ export default function PoliticaPrivacidade() {
                   <div className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
                     {[
                       ["#responsavel", "Responsável e abrangência"],
-                      ["#modalidades", "Gratuito e Completo"],
+                      ["#modalidades", "Gratuito, Premium e Assistente"],
                       ["#dados", "Dados tratados"],
                       ["#finalidades", "Finalidades e bases legais"],
                       ["#seguranca", "Armazenamento e segurança"],
@@ -196,9 +196,10 @@ export default function PoliticaPrivacidade() {
                 <Section id="abrangencia" number="2" title="A quem e a que esta Política se aplica">
                   <p className={paragraphClass}>
                     Esta Política se aplica ao aplicativo HerCalida para Android, ao site oficial e
-                    às modalidades Gratuito e Completo. Durante o período de testes,
-                    os recursos do plano Completo ficam liberados sem cobrança. A liberação para
-                    teste não altera as regras de privacidade descritas aqui.
+                    às modalidades Gratuito, Premium e HerCalida Assistente. Durante o beta
+                    fechado, os recursos do plano Assistente podem permanecer liberados por
+                    cortesia, sem cobrança. Essa liberação não altera as regras de privacidade
+                    descritas aqui.
                   </p>
                   <p className={paragraphClass}>
                     O HerCalida não é um dispositivo médico, não realiza diagnóstico, não prescreve
@@ -207,19 +208,22 @@ export default function PoliticaPrivacidade() {
                 </Section>
 
                 <Section id="modalidades" number="3" title="Modalidades de acesso e privacidade">
-                  <div className="not-prose grid gap-4 lg:grid-cols-2">
+                  <div className="not-prose grid gap-4 lg:grid-cols-3">
                     <PlanCard icon={Heart} title="Gratuito">
-                      Registro, acompanhamento, lembretes, aprendizado local do ciclo e conteúdo
-                      educativo. Inclui a exportação dos próprios dados, sem limite de vezes: uma
-                      cópia dos seus registros nunca depende de assinatura. Os registros ficam, por
-                      padrão, criptografados no aparelho, sem publicidade comportamental.
+                      Registros, histórico, calendário, lembretes, recursos de segurança,
+                      acompanhamento observacional Billings, controle financeiro local e
+                      exportação dos próprios dados. Os registros ficam, por padrão,
+                      criptografados no aparelho, sem publicidade comportamental.
                     </PlanCard>
-                    <PlanCard icon={Sparkles} title="Completo">
-                      Acrescenta o relatório para levar à consulta, a leitura dos padrões do ciclo
-                      ao longo dos meses e a Calie. Assinar o plano Completo <strong>não</strong>
-                      {" "}autoriza, por si só, o envio de registros de saúde para uma inteligência
-                      artificial: a Calie continua dependendo de consentimento específico, separado
-                      e revogável, e é destinada a maiores de 18 anos.
+                    <PlanCard icon={Database} title="Premium">
+                      Inclui tudo do Gratuito e acrescenta relatórios completos, padrões e
+                      comparações explicados. Essas análises são determinísticas e não enviam os
+                      registros à inteligência artificial nem liberam a conversa com a Calie.
+                    </PlanCard>
+                    <PlanCard icon={Sparkles} title="HerCalida Assistente">
+                      Inclui tudo do Premium e acrescenta a conversa contextual com a Calie, com
+                      até 200 mensagens por mês e 30 por dia. A Calie é destinada a maiores de 18
+                      anos e depende de consentimento específico, separado e revogável.
                     </PlanCard>
                   </div>
                   <p className={`${paragraphClass} mt-6`}>
@@ -255,7 +259,10 @@ export default function PoliticaPrivacidade() {
                     <BulletList>
                       <li>datas e duração de menstruações;</li>
                       <li>intensidade, aspecto e ocorrências de sangramento ou escape;</li>
-                      <li>sintomas, dor, cólicas, emoções e corrimentos;</li>
+                      <li>
+                        sintomas, dor, cólicas, emoções e corrimentos, incluindo cor, aspecto,
+                        granulosidade e odor informados;
+                      </li>
                       <li>estimativas e padrões calculados a partir do histórico;</li>
                       <li>
                         método contraceptivo, marca, horários, pausas, validade, esquecimentos e
@@ -265,19 +272,39 @@ export default function PoliticaPrivacidade() {
                         informações voluntárias relacionadas à vida íntima e sexual, quando a
                         funcionalidade utilizada as solicitar.
                       </li>
+                      <li>
+                        quando o acompanhamento Billings for habilitado: sensação, aparência,
+                        descrição, sangramento, relação informada, fatores de interferência e
+                        observações pessoais.
+                      </li>
                     </BulletList>
+                    <p className={paragraphClass}>
+                      O acompanhamento Billings desta versão é observacional: organiza o que foi
+                      registrado, mas não identifica pico, não confirma ovulação, fertilidade ou
+                      dias seguros e não substitui orientação de instrutor ou profissional
+                      qualificado.
+                    </p>
                   </Subsection>
 
                   <Subsection id="fases-vida" title="4.3 Gestação, climatério e menopausa">
                     <BulletList>
                       <li>data provável do parto e idade gestacional;</li>
-                      <li>peso, sintomas, contrações e movimentos fetais;</li>
+                      <li>
+                        peso, sintomas, contrações, percepção do padrão habitual e contagem
+                        opcional de movimentos fetais;
+                      </li>
                       <li>consultas, exames, ultrassons e vacinas registrados;</li>
                       <li>
                         ondas de calor, sono, humor, terapia hormonal e demais sintomas ou registros
                         dessas fases.
                       </li>
                     </BulletList>
+                    <p className={paragraphClass}>
+                      A informação sobre movimentos fetais é usada para organizar o histórico e,
+                      diante de redução ou ausência relatada, exibir orientação para procurar a
+                      equipe ou maternidade. O HerCalida não valida o bem-estar fetal e não aplica
+                      uma meta universal de movimentos.
+                    </p>
                   </Subsection>
 
                   <Subsection id="rotina" title="4.4 Saúde geral e rotina">
@@ -366,26 +393,27 @@ export default function PoliticaPrivacidade() {
                       Esses dados são usados no instante da verificação e descartados em seguida.
                     </p>
                     <div className="not-prose mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm leading-relaxed text-emerald-950">
-                      <strong>O que fica gravado é um único indicador:</strong> assinatura ativa,
-                      sim ou não. O comprovante de compra não é armazenado, e nada disso é enviado
-                      para fora do aparelho — o HerCalida não opera servidor de validação de
-                      compras. A consequência é que a verificação acontece localmente, o que
-                      reduz a quantidade de dados seus em circulação.
+                      <strong>O que fica gravado localmente:</strong> um indicador de assinatura
+                      ativa e, quando aplicável, o nível confirmado — Premium ou Assistente. O
+                      comprovante de compra não é armazenado, e o HerCalida não opera servidor
+                      próprio de validação de compras. A verificação acontece entre o aplicativo e
+                      a Google Play, o que reduz a quantidade de dados em circulação.
                     </div>
                     <p className={paragraphClass}>
-                      Quem participou do período de testes recebe um prazo de acesso completo por
-                      cortesia. Para isso, o aplicativo grava no próprio aparelho a data em que essa
-                      cortesia termina. Essa data acompanha o arquivo de exportação, para não se
-                      perder em uma troca de celular.
+                      Enquanto a monetização estiver desativada, o acesso ao plano Assistente fica
+                      liberado. Após pelo menos cinco dias distintos com registros, o aplicativo
+                      grava no aparelho uma cortesia de 365 dias para a testadora. A data de término
+                      acompanha o arquivo de exportação, para não se perder em uma troca de celular.
                     </p>
                   </Subsection>
 
-                  <Subsection id="dados-beta" title="4.8 Lista de interesse no beta">
+                  <Subsection id="dados-beta" title="4.8 Lista de novidades e lançamento">
                     <p className={paragraphClass}>
                       Quando uma pessoa preenche o formulário do site, o HerCalida registra o
                       e-mail informado, a data do cadastro, a página de origem, parâmetros UTM
                       presentes no endereço, a finalidade da comunicação e a versão da Política de
-                      Privacidade vigente. Não são solicitados dados de saúde nesse formulário.
+                      Privacidade vigente. O canal é usado para novidades do beta e do lançamento;
+                      não são solicitados dados de saúde nesse formulário.
                     </p>
                   </Subsection>
 
@@ -401,6 +429,16 @@ export default function PoliticaPrivacidade() {
                       A pergunta, as demais mensagens, nome, perfil, diagnósticos e registros de saúde
                       não são anexados automaticamente. Se o serviço estiver indisponível, a denúncia
                       permanece em uma fila criptografada no aparelho para tentativa posterior.
+                    </p>
+                  </Subsection>
+
+                  <Subsection id="dados-financeiros" title="4.10 Controle financeiro local">
+                    <p className={paragraphClass}>
+                      A aba Gastos pode armazenar tipo de lançamento, descrição, categoria, valor,
+                      data e observações de receitas e débitos. Esses dados permanecem
+                      criptografados no aparelho, não alimentam os Insights de saúde e não são
+                      enviados à Calie. Eles podem integrar o arquivo de exportação escolhido pela
+                      usuária.
                     </p>
                   </Subsection>
                 </Section>
@@ -430,8 +468,8 @@ export default function PoliticaPrivacidade() {
                     </li>
                     <li>reconhecer compras, assinaturas e direitos de acesso;</li>
                     <li>
-                      administrar a lista de interesse, enviar convites para o beta fechado e
-                      comunicar novidades relevantes do produto;
+                      administrar a lista de interesse e comunicar novidades do beta, do lançamento
+                      e do produto;
                     </li>
                     <li>
                       quando autorizado no site, medir visitas, origem de campanhas e interações
@@ -513,19 +551,26 @@ export default function PoliticaPrivacidade() {
 
                 <Section id="ia" number="8" title="Inteligência artificial e processamento pela Google">
                   <p className={paragraphClass}>
-                    A Calie utiliza o <strong>Firebase AI Logic</strong>, conectado à{" "}
-                    <strong>Gemini Developer API</strong>, ambos fornecidos pela Google. Segundo a
-                    documentação do Firebase, o Firebase AI Logic não armazena por si só as entradas
-                    e saídas; a retenção aplicável depende do provedor da Gemini API.
+                    A Calie utiliza o <strong>Firebase AI Logic</strong>, conectado à
+                    <strong> Agent Platform Gemini API</strong>, anteriormente denominada Vertex AI,
+                    ambos fornecidos pela Google. O provedor e o modelo podem ser controlados por
+                    configuração remota para continuidade e segurança do serviço, sem ampliar os
+                    dados enviados além do contexto descrito nesta Política.
                   </p>
                   <p className={paragraphClass}>
-                    O projeto do HerCalida utiliza uma conta de faturamento em nuvem ativa. Segundo
-                    os termos vigentes para Serviços Pagos, a Google não utiliza prompts e respostas
-                    para melhorar seus produtos. A Google pode, porém, registrá-los por período
-                    limitado para segurança, prevenção de violações e cumprimento de obrigações.
-                    Dados operacionais, como contagem de tokens, falhas, filtros de segurança,
-                    identificadores técnicos e endereço IP, também podem ser tratados para operar e
-                    proteger o serviço.
+                    O HerCalida não cria no Firestore uma cópia do histórico da conversa. A Google,
+                    entretanto, pode tratar dados operacionais como contagem de tokens, falhas,
+                    filtros de segurança, identificadores técnicos e endereço IP. Recursos de
+                    monitoramento do Firebase e do Google Cloud também podem registrar amostras de
+                    prompts e respostas no Cloud Logging, conforme a configuração e a retenção do
+                    projeto, para operação, diagnóstico e segurança. O acesso administrativo a
+                    esses registros deve ser restrito e sua retenção, revisada periodicamente.
+                  </p>
+                  <p className={paragraphClass}>
+                    Segundo os compromissos aplicáveis ao Vertex AI, a Google não usa os dados da
+                    cliente para treinar ou ajustar modelos de base sem permissão ou instrução. Isso
+                    não elimina os tratamentos necessários para prestar, proteger e monitorar o
+                    serviço nem obrigações legais aplicáveis.
                   </p>
                   <p className={paragraphClass}>
                     Se a configuração de faturamento ou os termos mudarem de forma relevante, o
@@ -546,9 +591,9 @@ export default function PoliticaPrivacidade() {
                     ação voluntária e afirmativa da usuária.
                   </p>
                   <p className={paragraphClass}>
-                    Consulte os{" "}
-                    <ExternalLink href="https://ai.google.dev/gemini-api/terms">
-                      Termos adicionais da Gemini API
+                    Consulte a{" "}
+                    <ExternalLink href="https://cloud.google.com/vertex-ai/generative-ai/docs/data-governance">
+                      governança de dados da IA generativa no Vertex AI
                     </ExternalLink>{" "}
                     e a página de{" "}
                     <ExternalLink href="https://firebase.google.com/support/privacy/">
@@ -560,10 +605,11 @@ export default function PoliticaPrivacidade() {
 
                 <Section id="notificacoes" number="9" title="Notificações">
                   <p className={paragraphClass}>
-                    Os lembretes de pílulas, consultas e rotinas são programados localmente. Seus
-                    horários e conteúdos não são enviados ao Firebase Cloud Messaging na versão
-                    atual. O sistema operacional poderá exibir a notificação na tela bloqueada; a
-                    usuária pode ajustar permissão, som e visibilidade nas configurações do aparelho.
+                    Os lembretes de pílulas e pausas, consultas, check-in diário, hidratação e
+                    demais rotinas são programados localmente. Seus horários e conteúdos não são
+                    enviados ao Firebase Cloud Messaging na versão atual. O sistema operacional
+                    poderá exibir a notificação na tela bloqueada; a usuária pode ajustar permissão,
+                    som e visibilidade nas configurações do aparelho.
                   </p>
                   <p className={paragraphClass}>
                     O HerCalida usa permissões de notificação, alarme exato, vibração,
@@ -580,10 +626,10 @@ export default function PoliticaPrivacidade() {
                     e registros pessoais de saúde não são enviados ao Firestore para essa finalidade.
                   </p>
                   <p className={paragraphClass}>
-                    O e-mail fornecido voluntariamente no formulário de interesse do beta é
-                    armazenado em uma base Cloud Firestore do site para administrar convites e
-                    novidades do HerCalida. Essa lista não recebe os registros de saúde mantidos no
-                    aplicativo e não é utilizada para publicidade comportamental.
+                    O e-mail fornecido voluntariamente no formulário de novidades é armazenado em
+                    uma base Cloud Firestore do site para comunicar o andamento do beta, o
+                    lançamento e novidades do HerCalida. Essa lista não recebe os registros de
+                    saúde mantidos no aplicativo e não é utilizada para publicidade comportamental.
                   </p>
                   <p className={paragraphClass}>
                     O app poderá obter arquivos tipográficos da infraestrutura Google Fonts, que
@@ -597,7 +643,8 @@ export default function PoliticaPrivacidade() {
                     depois que a pessoa escolhe <strong>Autorizar medição</strong>. Quando autorizada,
                     pode tratar endereço IP e características técnicas do navegador, páginas
                     visitadas, data e duração aproximada da visita, origem ou referência do acesso,
-                    parâmetros UTM e interações como compartilhamento de guias e cadastro no beta.
+                    parâmetros UTM e interações como compartilhamento de guias e cadastro na lista
+                    de novidades.
                     Os registros de saúde mantidos no aplicativo não são enviados ao Analytics.
                   </p>
                   <p className={paragraphClass}>
@@ -627,7 +674,7 @@ export default function PoliticaPrivacidade() {
                   </p>
                   <BulletList>
                     <li>
-                      com a <strong>Google</strong>, para Firebase AI Logic, Gemini Developer API,
+                      com a <strong>Google</strong>, para Firebase AI Logic, Agent Platform Gemini API,
                       App Check, Play Integrity, Cloud Messaging, Remote Config, Cloud Firestore,
                       Google Fonts, Google Analytics autorizado no site e futuras compras na Google
                       Play;
@@ -691,11 +738,12 @@ export default function PoliticaPrivacidade() {
                   <Subsection id="retencao-calie" title="13.3 Calie e serviços remotos">
                     <p className={paragraphClass}>
                       O histórico visível do chat e as respostas cacheadas ficam localmente e são
-                      apagados pelos controles do app. O Firebase AI Logic não mantém uma base própria
-                      dessas entradas e saídas. A Google poderá conservar registros por período
-                      limitado para segurança, prevenção de abuso e obrigações legais. Solicitações
-                      de exclusão serão tratadas dentro das possibilidades técnicas e legais do
-                      serviço.
+                      apagados pelos controles do app. O HerCalida não cria uma base remota própria
+                      com esse histórico. A Google poderá conservar telemetria e, quando o
+                      monitoramento de conteúdo estiver ativo, amostras de prompts e respostas no
+                      Cloud Logging, pelos prazos definidos na configuração do projeto e pelos
+                      tratamentos necessários a segurança e obrigações legais. Solicitações de
+                      exclusão serão tratadas dentro das possibilidades técnicas e legais do serviço.
                     </p>
                   </Subsection>
 
@@ -728,11 +776,11 @@ export default function PoliticaPrivacidade() {
                     </p>
                   </Subsection>
 
-                  <Subsection id="retencao-beta" title="13.6 Lista de interesse no beta">
+                  <Subsection id="retencao-beta" title="13.6 Lista de novidades e lançamento">
                     <p className={paragraphClass}>
-                      O e-mail da lista de interesse será mantido enquanto for necessário para
-                      administrar o beta e enviar as novidades solicitadas, ou até que a pessoa peça
-                      sua exclusão pelo canal de privacidade. A retirada da lista é gratuita.
+                      O e-mail da lista será mantido enquanto for necessário para comunicar o beta,
+                      o lançamento e as novidades solicitadas, ou até que a pessoa peça sua exclusão
+                      pelo canal de privacidade. A retirada da lista é gratuita.
                     </p>
                   </Subsection>
 
@@ -810,7 +858,7 @@ export default function PoliticaPrivacidade() {
                     </li>
                     <li>
                       <strong>internet</strong>, para artigos, configuração, segurança, mensagens
-                      técnicas, IA e futuras validações de assinatura.
+                      técnicas, IA e validações de assinatura.
                     </li>
                   </BulletList>
                   <p className={paragraphClass}>
@@ -840,8 +888,8 @@ export default function PoliticaPrivacidade() {
                   </p>
                   <p className={paragraphClass}>
                     Regras comerciais, preços, renovação, cancelamento, reembolso, testes gratuitos
-                    e limites dos planos são descritos nos Termos de Uso e nas
-                    telas de contratação.
+                    e limites dos planos são descritos nos{" "}
+                    <Link href="/termos-de-uso">Termos de Uso</Link> e nas telas de contratação.
                   </p>
                 </Section>
 
