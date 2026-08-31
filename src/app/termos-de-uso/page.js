@@ -90,7 +90,7 @@ export default function TermosDeUso() {
               Termos de Uso
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 22 de agosto de 2026
+              Última atualização: 30 de agosto de 2026
             </p>
           </div>
         </section>
@@ -163,9 +163,10 @@ export default function TermosDeUso() {
                 <Section id="quem-pode" number="3" title="Quem pode usar">
                   <p className={paragraphClass}>
                     Os recursos locais de acompanhamento podem ser usados por adolescentes com
-                    acompanhamento dos responsáveis, quando aplicável. A Calie e qualquer
-                    processamento remoto de dados são restritos a maiores de 18 anos e dependem de
-                    consentimento específico, separado e revogável dentro do aplicativo.
+                    acompanhamento dos responsáveis, quando aplicável. Todos os recursos de IA
+                    da Calie — conselhos do Dashboard, análise completa e chat — exigem idade de
+                    18 anos ou mais e consentimento específico, separado e revogável dentro do
+                    aplicativo.
                   </p>
                   <p className={paragraphClass}>
                     Contratar uma assinatura exige capacidade civil para celebrar contratos.
@@ -198,25 +199,32 @@ export default function TermosDeUso() {
                       registros de rotina e sintomas, aprendizado local do ciclo, gestação,
                       climatério, pós-parto, lembretes, recursos de segurança, acompanhamento
                       observacional Billings, controle financeiro local, conteúdo educativo e a
-                      exportação dos seus dados sem limite.
+                      exportação dos seus dados sem limite. Os conselhos do Dashboard podem
+                      incluir textos gerados remotamente pela Calie, mediante as condições de
+                      idade e consentimento descritas nestes Termos e na Política de Privacidade.
                     </p>
                     <p className={paragraphClass}>
                       O plano <strong>Premium</strong> inclui tudo do Gratuito e acrescenta
-                      relatórios completos para consultas, padrões e comparações explicados. Esse
-                      nível não inclui conversa generativa com a Calie.
+                      relatórios completos para consultas, padrões e comparações calculados a
+                      partir dos registros locais. O recurso <strong>Ver análise completa</strong>{" "}
+                      do Dashboard pode usar IA generativa remota para explicar esse contexto,
+                      mediante autorização. O Premium não inclui o chat com a Calie.
                     </p>
                     <p className={paragraphClass}>
                       O plano <strong>HerCalida Assistente</strong> inclui tudo do Premium e
                       acrescenta a conversa contextual com a Calie, limitada a 200 mensagens por
-                      mês e 30 mensagens por dia. Esses limites são cumulativos: atingir qualquer
-                      um deles interrompe novas mensagens até o dia seguinte ou o próximo mês,
-                      conforme o limite alcançado.
+                      mês e 30 mensagens por dia no chat. Esses limites se referem ao chat, não
+                      aos conselhos ou à análise completa do Dashboard, e são cumulativos:
+                      atingir qualquer um deles interrompe novas mensagens até o dia seguinte ou
+                      o próximo mês, conforme o limite alcançado.
                     </p>
                     <p className={paragraphClass}>
-                      Assinar o HerCalida Assistente não autoriza, por si só, o envio de registros
-                      de saúde para inteligência artificial. A Calie continua dependendo do
-                      consentimento específico descrito na Política de Privacidade, que pode ser
-                      revogado a qualquer momento em Perfil → Segurança e privacidade.
+                      Assinar qualquer plano, receber uma cortesia ou aceitar estes Termos não
+                      autoriza, por si só, o envio de registros de saúde para inteligência
+                      artificial. Todos os recursos de IA da Calie são opcionais, exigem idade de
+                      18 anos ou mais e dependem do consentimento específico descrito na Política
+                      de Privacidade, que pode ser revogado a qualquer momento em Perfil →
+                      Segurança e privacidade.
                     </p>
                   </Subsection>
 
@@ -341,9 +349,23 @@ export default function TermosDeUso() {
                 <Section id="calie" number="7" title="Uso da Calie">
                   <p className={paragraphClass}>
                     A Calie é uma camada de linguagem que organiza e explica o contexto dos seus
-                    registros e está disponível somente no plano HerCalida Assistente, para maiores
-                    de 18 anos que concedam o consentimento específico. Ela pode errar, omitir ou
-                    apresentar informação desatualizada, como qualquer sistema desse tipo.
+                    registros. Seus conselhos do Dashboard podem usar IA nos três planos, inclusive
+                    no Gratuito. A análise completa com IA está disponível no Premium e no HerCalida
+                    Assistente; o chat é exclusivo do HerCalida Assistente ou de acesso equivalente
+                    por cortesia. Todos esses recursos exigem idade de 18 anos ou mais e
+                    consentimento específico. A Calie pode errar, omitir ou apresentar informação
+                    desatualizada, como qualquer sistema desse tipo.
+                  </p>
+                  <p className={paragraphClass}>
+                    Após o consentimento e com idade válida, abrir o Dashboard pode iniciar
+                    automaticamente uma solicitação de conselhos à IA quando não houver um
+                    resultado local reutilizável, mesmo sem enviar uma mensagem no chat.
+                    Selecionar <strong>Ver análise completa</strong> também pode solicitar uma
+                    análise remota nos planos que oferecem esse recurso. Os dados enviados e as
+                    condições desse processamento estão descritos na{" "}
+                    <Link href="/politica-de-privacidade#ia">
+                      Política de Privacidade
+                    </Link>.
                   </p>
                   <BulletList>
                     <li>ela não faz diagnóstico, não prescreve e não interpreta exames;</li>
@@ -352,8 +374,9 @@ export default function TermosDeUso() {
                       fonte para decisão de saúde;
                     </li>
                     <li>
-                      o limite atual é de 30 mensagens por dia e 200 por mês, para manter o serviço
-                      sustentável;
+                      no chat, o limite atual é de 30 mensagens por dia e 200 por mês, para manter
+                      o serviço sustentável; esses limites não se referem aos conselhos ou à
+                      análise completa do Dashboard;
                     </li>
                     <li>
                       cada resposta pode ser denunciada pelo comando <strong>Denunciar
@@ -361,8 +384,9 @@ export default function TermosDeUso() {
                     </li>
                   </BulletList>
                   <p className={paragraphClass}>
-                    Revogar o consentimento da Calie interrompe o processamento remoto e mantém os
-                    demais recursos compatíveis com o plano funcionando normalmente.
+                    Revogar o consentimento da Calie interrompe novas solicitações de processamento
+                    remoto pela IA e mantém os demais recursos compatíveis com o plano funcionando
+                    normalmente.
                   </p>
                 </Section>
 

@@ -4,7 +4,7 @@ export default function sitemap() {
   return [
     {
       url: "https://hercalida.com",
-      lastModified,
+      lastModified: new Date("2026-08-30T12:00:00-03:00"),
       changeFrequency: "monthly",
       priority: 1,
     },
@@ -34,13 +34,13 @@ export default function sitemap() {
     },
     {
       url: "https://hercalida.com/politica-de-privacidade",
-      lastModified,
+      lastModified: new Date("2026-08-30T12:00:00-03:00"),
       changeFrequency: "yearly",
       priority: 0.4,
     },
     {
       url: "https://hercalida.com/termos-de-uso",
-      lastModified,
+      lastModified: new Date("2026-08-30T12:00:00-03:00"),
       changeFrequency: "yearly",
       priority: 0.4,
     },

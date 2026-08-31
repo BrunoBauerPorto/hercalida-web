@@ -105,7 +105,7 @@ export default function PoliticaPrivacidade() {
               Política de Privacidade
             </h1>
             <p className="font-medium text-slate-500">
-              Última atualização: 22 de agosto de 2026
+              Última atualização: 30 de agosto de 2026
             </p>
           </div>
         </section>
@@ -214,19 +214,38 @@ export default function PoliticaPrivacidade() {
                       acompanhamento observacional Billings, controle financeiro local e
                       exportação dos próprios dados. Os registros ficam, por padrão,
                       criptografados no aparelho, sem publicidade comportamental.
+                      Os conselhos do Dashboard podem incluir textos gerados remotamente pela
+                      Calie, nas condições descritas abaixo.
                     </PlanCard>
                     <PlanCard icon={Database} title="Premium">
                       Inclui tudo do Gratuito e acrescenta relatórios completos, padrões e
-                      comparações explicados. Essas análises são determinísticas e não enviam os
-                      registros à inteligência artificial nem liberam a conversa com a Calie.
+                      comparações calculados a partir dos registros locais. O recurso
+                      <strong> Ver análise completa</strong> do Dashboard pode utilizar IA
+                      generativa remota para explicar esse contexto. O Premium não libera o chat
+                      com a Calie.
                     </PlanCard>
                     <PlanCard icon={Sparkles} title="HerCalida Assistente">
                       Inclui tudo do Premium e acrescenta a conversa contextual com a Calie, com
-                      até 200 mensagens por mês e 30 por dia. A Calie é destinada a maiores de 18
-                      anos e depende de consentimento específico, separado e revogável.
+                      até 200 mensagens por mês e 30 por dia no chat, além dos conselhos e da
+                      análise completa do Dashboard. Todo processamento pela IA depende das
+                      condições de idade e consentimento abaixo.
                     </PlanCard>
                   </div>
                   <p className={`${paragraphClass} mt-6`}>
+                    <strong>IA no Dashboard e no chat:</strong> os conselhos do Dashboard podem
+                    combinar observações calculadas no aparelho com textos gerados pela Calie nos
+                    três planos, inclusive no Gratuito. A análise completa com IA está disponível
+                    no Premium e no HerCalida Assistente; a conversa no chat é exclusiva do
+                    HerCalida Assistente ou de acesso equivalente por cortesia. Os limites de
+                    mensagens informados acima se referem ao chat.
+                  </p>
+                  <p className={paragraphClass}>
+                    Todos esses usos de IA remota são opcionais, destinados somente a maiores de
+                    18 anos e exigem consentimento específico, separado e revogável no app. Assinar
+                    um plano, receber cortesia ou apenas ler esta Política não substitui essa
+                    autorização.
+                  </p>
+                  <p className={paragraphClass}>
                     A mudança de plano não altera a propriedade dos dados e não permite sua venda
                     ou utilização publicitária. Se a usuária não autorizar ou revogar a autorização
                     da Calie em <strong>Perfil → Segurança e privacidade</strong>, a IA ficará
@@ -318,15 +337,23 @@ export default function PoliticaPrivacidade() {
 
                   <Subsection id="dados-calie" title="4.5 Conteúdo da Calie">
                     <BulletList>
-                      <li>perguntas e mensagens digitadas pela usuária;</li>
-                      <li>respostas geradas pela Calie;</li>
-                      <li>até 10 mensagens anteriores, para manter o contexto da conversa;</li>
+                      <li>perguntas e mensagens digitadas pela usuária no chat;</li>
+                      <li>conselhos, análises completas e respostas gerados pela Calie;</li>
+                      <li>no chat, até 10 mensagens anteriores para manter o contexto da conversa;</li>
                       <li>
                         fase de vida, condições informadas, padrões calculados pelo motor local e um
                         resumo de até 14 dias de registros recentes, como dor, sono, emoções,
                         exercício, alimentação, hidratação e sangramento.
                       </li>
                     </BulletList>
+                    <p className={paragraphClass}>
+                      Na versão atual, os conselhos do Dashboard podem utilizar um resumo de até
+                      sete dias recentes; a análise completa, de até quatro dias; e o chat, de até
+                      14 dias. Esses resumos podem ser acompanhados da fase de vida, das condições
+                      informadas e das observações calculadas pelo motor local. O envio de contexto
+                      para conselhos ou análises não exige que a usuária escreva uma mensagem no
+                      chat, mas continua dependendo do consentimento para IA.
+                    </p>
                     <p className={paragraphClass}>
                       O nome ou apelido salvo no perfil não é inserido automaticamente no contexto
                       enviado à Calie. Uma mensagem pode conter dados identificáveis caso a própria
@@ -453,7 +480,11 @@ export default function PoliticaPrivacidade() {
                     <li>gerar gráficos, relatórios e observações baseadas nos registros;</li>
                     <li>programar lembretes locais de contraceptivos, consultas e rotinas;</li>
                     <li>proteger o acesso com PIN e, quando habilitada, biometria;</li>
-                    <li>responder às solicitações feitas à Calie após consentimento específico;</li>
+                    <li>
+                      após consentimento específico, gerar conselhos no Dashboard, elaborar a
+                      análise completa com IA e responder às mensagens do chat, conforme os
+                      recursos disponíveis no plano;
+                    </li>
                     <li>
                       receber e revisar denúncias para moderar respostas e aprimorar filtros e
                       salvaguardas da Calie;
@@ -551,6 +582,15 @@ export default function PoliticaPrivacidade() {
 
                 <Section id="ia" number="8" title="Inteligência artificial e processamento pela Google">
                   <p className={paragraphClass}>
+                    O processamento pela Calie abrange os conselhos do Dashboard, a análise
+                    completa e o chat, conforme a seção 3. Com idade e consentimento válidos, abrir
+                    o Dashboard pode iniciar automaticamente uma solicitação de conselhos à IA,
+                    quando não houver um resultado local reutilizável. Selecionar
+                    <strong> Ver análise completa</strong> pode solicitar uma análise remota nos
+                    planos que oferecem esse recurso. As respostas podem ser reutilizadas a partir
+                    do cache no aparelho, sem uma nova chamada a cada visualização.
+                  </p>
+                  <p className={paragraphClass}>
                     A Calie utiliza o <strong>Firebase AI Logic</strong>, conectado à
                     <strong> Agent Platform Gemini API</strong>, anteriormente denominada Vertex AI,
                     ambos fornecidos pela Google. O provedor e o modelo podem ser controlados por
@@ -558,7 +598,8 @@ export default function PoliticaPrivacidade() {
                     dados enviados além do contexto descrito nesta Política.
                   </p>
                   <p className={paragraphClass}>
-                    O HerCalida não cria no Firestore uma cópia do histórico da conversa. A Google,
+                    O HerCalida não cria no Firestore uma cópia do histórico da conversa nem uma
+                    base com os conselhos e análises gerados. A Google,
                     entretanto, pode tratar dados operacionais como contagem de tokens, falhas,
                     filtros de segurança, identificadores técnicos e endereço IP. Recursos de
                     monitoramento do Firebase e do Google Cloud também podem registrar amostras de
@@ -737,8 +778,8 @@ export default function PoliticaPrivacidade() {
 
                   <Subsection id="retencao-calie" title="13.3 Calie e serviços remotos">
                     <p className={paragraphClass}>
-                      O histórico visível do chat e as respostas cacheadas ficam localmente e são
-                      apagados pelos controles do app. O HerCalida não cria uma base remota própria
+                      O histórico visível do chat e o cache dos conselhos e análises da Calie ficam
+                      localmente e são apagados pelos controles do app. O HerCalida não cria uma base remota própria
                       com esse histórico. A Google poderá conservar telemetria e, quando o
                       monitoramento de conteúdo estiver ativo, amostras de prompts e respostas no
                       Cloud Logging, pelos prazos definidos na configuração do projeto e pelos
@@ -832,8 +873,9 @@ export default function PoliticaPrivacidade() {
 
                 <Section id="menores" number="15" title="Crianças e adolescentes">
                   <p className={paragraphClass}>
-                    O HerCalida não é direcionado a crianças. A Calie e qualquer processamento
-                    remoto de dados são bloqueados para menores de 18 anos.
+                    O HerCalida não é direcionado a crianças. Todos os recursos de IA da Calie,
+                    incluindo conselhos do Dashboard, análise completa e chat, são bloqueados
+                    para menores de 18 anos.
                   </p>
                   <p className={paragraphClass}>
                     Adolescentes podem utilizar recursos locais de acompanhamento menstrual e de

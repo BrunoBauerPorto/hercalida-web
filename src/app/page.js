@@ -149,21 +149,23 @@ const plans = [
       "Controle financeiro local",
       "Exportação dos seus dados, sem limite",
       "Conteúdo educativo",
+      "Conselhos da Calie no Dashboard, com autorização",
     ],
     featured: false,
   },
   {
     name: "Premium",
-    eyebrow: "Análises sem IA generativa",
+    eyebrow: "Relatórios e análise completa",
     description:
-      "Relatórios completos e explicações determinísticas construídas a partir dos seus registros.",
+      "Relatórios e padrões calculados no aparelho, com análise completa do Dashboard que pode usar IA mediante autorização.",
     price: "R$ 9,90/mês",
     priceNote: "ou R$ 79,90 por ano.",
     features: [
       "Tudo do plano Gratuito",
       "Relatórios completos para consultas",
       "Padrões e comparações explicados",
-      "Sem conversa generativa com a Calie",
+      "Análise completa com IA, mediante autorização",
+      "Não inclui o chat com a Calie",
     ],
     featured: false,
   },
@@ -177,8 +179,8 @@ const plans = [
     features: [
       "Tudo do plano Premium",
       "Conversa contextual com a Calie",
-      "Até 200 mensagens por mês",
-      "Limite de 30 mensagens por dia",
+      "Até 200 mensagens por mês no chat",
+      "Limite de 30 mensagens por dia no chat",
       "Consentimento específico e revogável",
     ],
     featured: true,
@@ -194,17 +196,17 @@ const faqItems = [
   {
     question: "Meus dados ficam na nuvem?",
     answer:
-      "Por padrão, seus registros de saúde ficam criptografados no aparelho. Somente ao autorizar a Calie, o contexto descrito na Política de Privacidade é processado remotamente para gerar a resposta solicitada.",
+      "Por padrão, seus registros de saúde ficam criptografados no aparelho. Com consentimento específico para IA e idade de 18 anos ou mais, um contexto minimizado pode ser processado remotamente para gerar conselhos, análises e respostas no chat, conforme seu plano. Depois dessa autorização, abrir o Dashboard pode solicitar conselhos à IA automaticamente quando não houver um resultado reutilizável, mesmo sem enviar uma mensagem no chat. Os dados envolvidos estão descritos na Política de Privacidade.",
   },
   {
     question: "A Calie é obrigatória?",
     answer:
-      "Não. A Calie faz parte somente do plano HerCalida Assistente, é destinada a maiores de 18 anos e depende de consentimento específico. Você pode revogar a autorização sem perder os demais recursos compatíveis com seu plano.",
+      "Não. Todos os recursos de IA da Calie são opcionais, exigem idade de 18 anos ou mais e consentimento específico. Os conselhos do Dashboard podem usar IA nos três planos; a análise completa, no Premium e no Assistente; e o chat, somente no Assistente ou em acesso equivalente por cortesia. Você pode revogar a autorização em Perfil → Segurança e privacidade sem perder os demais recursos compatíveis com seu plano.",
   },
   {
     question: "Qual é a diferença entre Premium e Assistente?",
     answer:
-      "O Premium libera relatórios completos e padrões explicados sem conversa generativa. O HerCalida Assistente inclui tudo do Premium e acrescenta a Calie, com até 200 mensagens por mês e 30 por dia.",
+      "O Premium libera relatórios completos, padrões e comparações calculados no aparelho, além de Ver análise completa no Dashboard, que pode usar IA remota com autorização. Não inclui o chat. O HerCalida Assistente inclui tudo do Premium e acrescenta a conversa com a Calie, com até 200 mensagens por mês e 30 por dia no chat. Esses limites não se referem aos conselhos ou à análise completa do Dashboard.",
   },
   {
     question: "Quando o aplicativo estará disponível?",
@@ -240,7 +242,7 @@ function BetaForm({ compact = false }) {
         utmCampaign,
         utmContent,
         finalidade: "novidades_beta_e_lancamento_do_produto",
-        versaoPoliticaPrivacidade: "2026-08-22",
+        versaoPoliticaPrivacidade: "2026-08-30",
       });
       trackEvent("beta_signup", {
         form_variant: compact ? "footer" : "main",
@@ -717,10 +719,11 @@ export default function HerCalidaLandingPage() {
 
             <div className="order-1 lg:order-2">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-rose-200 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-rose-600">
-                <Bot className="h-4 w-4" /> HerCalida Assistente
+                <Bot className="h-4 w-4" /> Calie no Dashboard e no chat
               </div>
-              <h2 className="font-serif text-3xl font-bold leading-tight text-slate-950 sm:text-4xl md:text-5xl">A Calie conversa sobre o que você realmente registrou.</h2>
-              <p className="mt-5 leading-7 text-slate-600">A IA recebe um contexto minimizado somente após autorização. Ela usa fatos recentes e observações produzidas pelo motor do HerCalida para oferecer uma conversa mais pessoal, sem inventar padrões novos.</p>
+              <h2 className="font-serif text-3xl font-bold leading-tight text-slate-950 sm:text-4xl md:text-5xl">A Calie ajuda a entender o que você registrou.</h2>
+              <p className="mt-5 leading-7 text-slate-600">A IA recebe um contexto minimizado somente após autorização. Os conselhos do Dashboard podem usar IA nos três planos; a análise completa está no Premium e no Assistente; e a conversa no chat é exclusiva do Assistente ou de acesso equivalente por cortesia.</p>
+              <p className="mt-4 leading-7 text-slate-600">As explicações usam registros recentes e observações calculadas no aparelho, mas podem conter erros. Após o consentimento, abrir o Dashboard pode solicitar conselhos à IA mesmo sem iniciar uma conversa.</p>
               <ul className="mt-8 space-y-4">
                 {[
                   "Consentimento específico, separado e revogável",
@@ -777,7 +780,7 @@ export default function HerCalidaLandingPage() {
             <div className="mx-auto mb-14 max-w-3xl text-center">
               <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-rose-500">Três formas de usar</p>
               <h2 className="font-serif text-3xl font-bold text-slate-950 sm:text-4xl md:text-5xl">Escolha a profundidade que combina com você.</h2>
-              <p className="mt-5 leading-7 text-slate-600">A assinatura de um plano nunca será tratada como autorização automática para enviar dados à IA.</p>
+              <p className="mt-5 leading-7 text-slate-600">Conselhos, análise completa e chat com IA são opcionais e exigem idade de 18 anos ou mais e consentimento específico, separado e revogável. Assinar um plano ou receber uma cortesia não autoriza automaticamente o envio de dados à IA.</p>
             </div>
             <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3 md:pt-4">
               {plans.map((plan) => <PlanCard key={plan.name} plan={plan} />)}
